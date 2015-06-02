@@ -11,17 +11,26 @@ import Foundation
 import UIKit
 
 class BankAccount: NSObject {
-    var accountName: String 
     
+    //Name of account
+    var accountName: String
+    
+    //Name of bank account is with
     var bankName: String
     
+    //Balance in this account
     var bankBalance: Double
     
     init(accountName: String, bankName: String, bankBalance: Double) {
+        
+        
+        
         self.accountName = accountName
         self.bankName = bankName
         self.bankBalance = bankBalance
+        
         super.init()
+        
     }
     
     

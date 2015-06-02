@@ -207,7 +207,7 @@
                                     </subviews>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <segue destination="8ob-Bm-34C" kind="unwind" unwindAction="selectedAccount:" id="zWD-XV-5wY"/>
+                                    <segue destination="8ob-Bm-34C" kind="unwind" identifier="SaveAccountDetail" unwindAction="selectedAccount:" id="ndK-CZ-qPM"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>

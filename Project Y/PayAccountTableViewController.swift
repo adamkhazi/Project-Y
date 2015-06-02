@@ -98,12 +98,6 @@ class PayAccountTableViewController: UITableViewController, UITableViewDataSourc
         //change selected row
         selectedAccountIndex = indexPath.row
         
-        //get account index selected's details
-        let account = accounts[indexPath.row]
-        
-        //save details to an account object
-        selectedBankAccount = BankAccount(accountName: (account.valueForKey("name") as? String)!, bankName: (account.valueForKey("bank_name") as? String)!, bankBalance: (account.valueForKey("balance") as? Double)!)
-        
         //update the checkmark for the current row
         let cell = tableView.cellForRowAtIndexPath(indexPath)
         
@@ -132,6 +126,22 @@ class PayAccountTableViewController: UITableViewController, UITableViewDataSourc
             accounts = results
         } else {
             println("Could not fetch \(error), \(error!.userInfo)")
+        }
+    }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "SaveAccountDetail" {
+            if let cell = sender as? UITableViewCell {
+                let indexPath = tableView.indexPathForCell(cell)
+                
+                selectedAccountIndex = indexPath?.row
+                
+                //get account index selected's details
+                let account = accounts[indexPath!.row]
+                
+                //save details to an account object
+                selectedBankAccount = BankAccount(accountName: (account.valueForKey("name") as? String)!, bankName: (account.valueForKey("bank_name") as? String)!, bankBalance: (account.valueForKey("balance") as? Double)!)
+            }
         }
     }
 }

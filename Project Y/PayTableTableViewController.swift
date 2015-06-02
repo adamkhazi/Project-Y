@@ -14,11 +14,14 @@ class PayTableTableViewController: UITableViewController {
     @IBOutlet weak var selectedAccountNameLabel: UILabel!
     
     //store selected bank account if chosen
-    var selectedBankAccount: BankAccount!
+    var selectedBankAccount: BankAccount?
     
-    override func viewDidLoad() {
+    override func viewDidLoad()
+    {
         super.viewDidLoad()
-
+        
+        
+        
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
@@ -27,16 +30,24 @@ class PayTableTableViewController: UITableViewController {
     }
 
     //unwind segue
-    @IBAction func selectedAccount(segue:UIStoryboardSegue) {
+    @IBAction func selectedAccount(segue:UIStoryboardSegue)
+    {
         if let payAccountTableViewController = segue.sourceViewController as? PayAccountTableViewController{
             
-                self.selectedBankAccount = BankAccount(accountName: payAccountTableViewController.selectedBankAccount.accountName, bankName: payAccountTableViewController.selectedBankAccount.bankName, bankBalance: payAccountTableViewController.selectedBankAccount.bankBalance)
+                self.selectedBankAccount = BankAccount(
+                    accountName: payAccountTableViewController.selectedBankAccount.accountName,
+                    bankName: payAccountTableViewController.selectedBankAccount.bankName,
+                    bankBalance: payAccountTableViewController.selectedBankAccount.bankBalance)
             
-                selectedAccountNameLabel.text = selectedBankAccount.accountName
+                    updateFromAccountLabel(selectedBankAccount!.accountName)
             
             }
     }
 
+    func updateFromAccountLabel(accountName: String)
+    {
+        selectedAccountNameLabel.text = accountName
+    }
     /*
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("reuseIdentifier", forIndexPath: indexPath) as! UITableViewCell
