@@ -98,11 +98,10 @@ class AccountSettingsTableViewController: UITableViewController, UITableViewData
             let indexPath = NSIndexPath(forRow: accounts.count-1, inSection: 0)
             tableView.insertRowsAtIndexPaths([indexPath], withRowAnimation: .Automatic)
         }
-        
     }
     
     //saves to sql entity 'Accounts'
-    func saveAccount(bankAccount: BankAccount) {
+    func saveAccount(accountDetail: BankAccount) {
         //1
         let appDelegate =
         UIApplication.sharedApplication().delegate as! AppDelegate
@@ -118,9 +117,9 @@ class AccountSettingsTableViewController: UITableViewController, UITableViewData
             insertIntoManagedObjectContext:managedContext)
         
         //3
-        account.setValue(bankAccount.accountName, forKey: "name")
-        account.setValue(bankAccount.bankName, forKey: "bank_name")
-        account.setValue(bankAccount.bankBalance, forKey: "balance")
+        account.setValue(accountDetail.accountName, forKey: "name")
+        account.setValue(accountDetail.bankName, forKey: "bank_name")
+        account.setValue(accountDetail.bankBalance, forKey: "balance")
         
         //4
         var error: NSError?

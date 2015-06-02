@@ -5,7 +5,12 @@
         <attribute name="bank_name" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
     </entity>
+    <entity name="Payees" syncable="YES">
+        <attribute name="company" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
     <elements>
         <element name="Accounts" positionX="-7668" positionY="-3159" width="128" height="88"/>
+        <element name="Payees" positionX="-7668" positionY="-3141" width="128" height="75"/>
     </elements>
 </model>

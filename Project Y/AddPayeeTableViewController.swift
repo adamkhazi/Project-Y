@@ -1,68 +1,71 @@
 //
-//  AddAccountTableViewController.swift
+//  AddPayeeTableViewController.swift
 //  Project Y
 //
-//  Created by Adam Khazi on 16/05/2015.
+//  Created by Adam Khazi on 02/06/2015.
 //  Copyright (c) 2015 Adam Khazi. All rights reserved.
 //
 
 import UIKit
 import CoreData
 
-class AddAccountTableViewController: UITableViewController{
+class AddPayeeTableViewController: UITableViewController {
 
-    var bankAccount:BankAccount!
+    //new payee
+    var payee: Payee!
     
-    @IBOutlet weak var accountName: UITextField!
-    @IBOutlet weak var bankName: UITextField!
-    @IBOutlet weak var bankBalance: UITextField!
+    //field connectors
+    @IBOutlet weak var companyField: UITextField!
+    @IBOutlet weak var nameField: UITextField!
     
     override func viewDidLoad() {
-
+        
         super.viewDidLoad()
         
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
-
+        
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
+    
     // MARK: - Table view data source
-
+    
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         // #warning Potentially incomplete method implementation.
         // Return the number of sections.
         return 1
     }
-
+    
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete method implementation.
         // Return the number of rows in the section.
-        return 3
+        return 2
     }
     
+    //tapping anywhere in a specific row brings up keyboard
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         if indexPath.row == 0 {
-            accountName.becomeFirstResponder()
+            companyField.becomeFirstResponder()
         }
         if indexPath.row == 1 {
-            bankName.becomeFirstResponder()
+            nameField.becomeFirstResponder()
         }
-        if indexPath.row == 2 {
-            bankBalance.becomeFirstResponder()
-        }
+        
     }
-//     In a storyboard-based application, you will often want to do a little preparation before navigation
     
+    //prepare for unwind
+    //saves field data into payee object
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        if segue.identifier == "SaveAccountDetail" {
-            bankAccount = BankAccount(accountName: self.accountName.text, bankName: self.bankName.text, bankBalance: NSString(string: self.bankBalance.text).doubleValue)
+        if segue.identifier == "SavePayeeDetail" {
+            payee = Payee(company: companyField.text, name: nameField.text)
+            
+            println(payee.company)
         }
     }
     

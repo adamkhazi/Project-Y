@@ -22,6 +22,9 @@
 		661177091B07B40900F34018 /* DataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 661177071B07B40900F34018 /* DataModel.xcdatamodeld */; };
 		6611770B1B07BE0D00F34018 /* AccountSettingsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6611770A1B07BE0D00F34018 /* AccountSettingsTableViewController.swift */; };
 		6611770D1B07C34200F34018 /* AddAccountTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6611770C1B07C34200F34018 /* AddAccountTableViewController.swift */; };
+		66AE4BEF1B1DD718006569B3 /* PayFormPayeesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66AE4BEE1B1DD718006569B3 /* PayFormPayeesTableViewController.swift */; };
+		66AE4BF11B1DE5B5006569B3 /* Payee.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66AE4BF01B1DE5B5006569B3 /* Payee.swift */; };
+		66AE4BF31B1DE9F5006569B3 /* AddPayeeTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66AE4BF21B1DE9F5006569B3 /* AddPayeeTableViewController.swift */; };
 		66EF80541B1B4154004D788C /* PayAccountTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66EF80531B1B4154004D788C /* PayAccountTableViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -55,6 +58,9 @@
 		661177081B07B40900F34018 /* DataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = DataModel.xcdatamodel; sourceTree = "<group>"; };
 		6611770A1B07BE0D00F34018 /* AccountSettingsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountSettingsTableViewController.swift; sourceTree = "<group>"; wrapsLines = 1; };
 		6611770C1B07C34200F34018 /* AddAccountTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddAccountTableViewController.swift; sourceTree = "<group>"; };
+		66AE4BEE1B1DD718006569B3 /* PayFormPayeesTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PayFormPayeesTableViewController.swift; sourceTree = "<group>"; };
+		66AE4BF01B1DE5B5006569B3 /* Payee.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Payee.swift; sourceTree = "<group>"; };
+		66AE4BF21B1DE9F5006569B3 /* AddPayeeTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddPayeeTableViewController.swift; sourceTree = "<group>"; };
 		66EF80531B1B4154004D788C /* PayAccountTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PayAccountTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -100,19 +106,19 @@
 				661176D91B075C2800F34018 /* AppDelegate.swift */,
 				661177071B07B40900F34018 /* DataModel.xcdatamodeld */,
 				661176DB1B075C2800F34018 /* DashboardViewController.swift */,
+				6610ED221B18662C005A50C5 /* BankAccount.swift */,
+				66AE4BF01B1DE5B5006569B3 /* Payee.swift */,
 				661176FB1B0763BF00F34018 /* BudgetViewController.swift */,
 				661176DD1B075C2800F34018 /* HistoryViewController.swift */,
 				661176DF1B075C2800F34018 /* Main.storyboard */,
 				661177051B07AF2600F34018 /* AccountsTableViewController.swift */,
-				661176E21B075C2800F34018 /* Images.xcassets */,
 				661176E41B075C2800F34018 /* LaunchScreen.xib */,
-				661176D71B075C2800F34018 /* Supporting Files */,
 				661177011B07881200F34018 /* ReceiveViewController.swift */,
-				661177031B079E5F00F34018 /* PayTableTableViewController.swift */,
 				6611770A1B07BE0D00F34018 /* AccountSettingsTableViewController.swift */,
 				6611770C1B07C34200F34018 /* AddAccountTableViewController.swift */,
-				6610ED221B18662C005A50C5 /* BankAccount.swift */,
-				66EF80531B1B4154004D788C /* PayAccountTableViewController.swift */,
+				66AE4BED1B1DD663006569B3 /* Pay Form */,
+				661176E21B075C2800F34018 /* Images.xcassets */,
+				661176D71B075C2800F34018 /* Supporting Files */,
 			);
 			path = "Project Y";
 			sourceTree = "<group>";
@@ -140,6 +146,17 @@
 				661176F01B075C2800F34018 /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		66AE4BED1B1DD663006569B3 /* Pay Form */ = {
+			isa = PBXGroup;
+			children = (
+				661177031B079E5F00F34018 /* PayTableTableViewController.swift */,
+				66EF80531B1B4154004D788C /* PayAccountTableViewController.swift */,
+				66AE4BEE1B1DD718006569B3 /* PayFormPayeesTableViewController.swift */,
+				66AE4BF21B1DE9F5006569B3 /* AddPayeeTableViewController.swift */,
+			);
+			name = "Pay Form";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -245,8 +262,11 @@
 				661176DE1B075C2800F34018 /* HistoryViewController.swift in Sources */,
 				6611770D1B07C34200F34018 /* AddAccountTableViewController.swift in Sources */,
 				661177061B07AF2600F34018 /* AccountsTableViewController.swift in Sources */,
+				66AE4BEF1B1DD718006569B3 /* PayFormPayeesTableViewController.swift in Sources */,
+				66AE4BF31B1DE9F5006569B3 /* AddPayeeTableViewController.swift in Sources */,
 				661176DA1B075C2800F34018 /* AppDelegate.swift in Sources */,
 				66EF80541B1B4154004D788C /* PayAccountTableViewController.swift in Sources */,
+				66AE4BF11B1DE5B5006569B3 /* Payee.swift in Sources */,
 				6610ED231B18662C005A50C5 /* BankAccount.swift in Sources */,
 				6611770B1B07BE0D00F34018 /* AccountSettingsTableViewController.swift in Sources */,
 				661176DC1B075C2800F34018 /* DashboardViewController.swift in Sources */,

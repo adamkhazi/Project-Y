@@ -16,7 +16,7 @@ class PayAccountTableViewController: UITableViewController, UITableViewDataSourc
     //holds bank account selection
     var selectedBankAccount:BankAccount!
     
-    //holds currently selected game index 
+    //holds currently selected account index 
     var selectedAccountIndex:Int? = nil
     
     override func viewDidLoad() {
@@ -56,7 +56,7 @@ class PayAccountTableViewController: UITableViewController, UITableViewDataSourc
     }
     
     //dequeues table view cells and populates them with
-    //corresponding index in array
+    //corresponding index in nsobject
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell =
         tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath)
