@@ -66,6 +66,8 @@ class PayTableTableViewController: UITableViewController {
             
             updateToPayeeLabel()
             
+            //debug
+            println("Pay Table - Unwind Segue ran. PayeesTable -> Pay Table")
         }
     }
     

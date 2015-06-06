@@ -26,8 +26,8 @@ class PayFormPayeesTableViewController: UITableViewController, UITableViewDataSo
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        tableView.registerClass(UITableViewCell.self,
-            forCellReuseIdentifier: "PayeeCell")
+//        tableView.registerClass(UITableViewCell.self,
+//            forCellReuseIdentifier: "PayeeCell")
         
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
@@ -155,11 +155,9 @@ class PayFormPayeesTableViewController: UITableViewController, UITableViewDataSo
         }
     }
     
-    //unwind segue - save payee
+    //unwind segue - save payee - from Add Payee Detail screen
     @IBAction func savePayeeDetail(segue:UIStoryboardSegue) {
         if let addPayeeTableViewController = segue.sourceViewController as? AddPayeeTableViewController {
-            
-            println(addPayeeTableViewController.payee.company)
             
             //add the new account to the accounts nsobject
             savePayee(addPayeeTableViewController.payee)
@@ -170,6 +168,8 @@ class PayFormPayeesTableViewController: UITableViewController, UITableViewDataSo
             //update the tableView
             let indexPath = NSIndexPath(forRow: payees.count-1, inSection: 0)
             tableView.insertRowsAtIndexPaths([indexPath], withRowAnimation: .Automatic)
+            //debug
+            println("Payees Table - Unwind Segue 'savePayeeDetail' - " + "Add Payee -> Payee Table")
         }
     }
     
@@ -205,9 +205,12 @@ class PayFormPayeesTableViewController: UITableViewController, UITableViewDataSo
         }
     }
     
-    //unwind segue back from add payee scene
+    //unwind segue back to Pay Table
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        if segue.identifier == "SavePayeeDetail" {
+        //debug
+        println("ran Payees Table - Prepare for segue ran. PayeesTable -> Pay Table")
+        
+        if segue.identifier == "SaveSelectedPayee" {
             if let cell = sender as? UITableViewCell {
                 
                 let indexPath = tableView.indexPathForCell(cell)
@@ -219,6 +222,9 @@ class PayFormPayeesTableViewController: UITableViewController, UITableViewDataSo
                 
                 //save details to an account object
                 selectedPayee = Payee(company: (payee.valueForKey("company") as? String)!, name: (payee.valueForKey("name") as? String)!)
+                
+                //debug
+                println("Payees Table - Prepare for segue ran. PayeesTable -> Pay Table")
             }
         }
     }

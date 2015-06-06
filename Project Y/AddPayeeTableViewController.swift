@@ -65,7 +65,8 @@ class AddPayeeTableViewController: UITableViewController {
         if segue.identifier == "SavePayeeDetail" {
             payee = Payee(company: companyField.text, name: nameField.text)
             
-            println(payee.company)
+            //debug
+            println("Add Screen - Prepare for segue ran. Add Screen -> Payees table")
         }
     }
     

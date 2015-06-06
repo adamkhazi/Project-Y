@@ -22,8 +22,8 @@ class PayAccountTableViewController: UITableViewController, UITableViewDataSourc
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        tableView.registerClass(UITableViewCell.self,
-            forCellReuseIdentifier: "AccountCell")
+//        tableView.registerClass(UITableViewCell.self,
+//            forCellReuseIdentifier: "AccountCell")
         
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
@@ -59,7 +59,7 @@ class PayAccountTableViewController: UITableViewController, UITableViewDataSourc
     //corresponding index in nsobject
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell =
-        tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath)
+        tableView.dequeueReusableCellWithIdentifier("AccountCell", forIndexPath: indexPath)
             as! UITableViewCell
         
         let account = accounts[indexPath.row]

@@ -151,8 +151,8 @@
 		66AE4BED1B1DD663006569B3 /* Pay Form */ = {
 			isa = PBXGroup;
 			children = (
-				661177031B079E5F00F34018 /* PayTableTableViewController.swift */,
 				66EF80531B1B4154004D788C /* PayAccountTableViewController.swift */,
+				661177031B079E5F00F34018 /* PayTableTableViewController.swift */,
 				66AE4BEE1B1DD718006569B3 /* PayFormPayeesTableViewController.swift */,
 				66AE4BF21B1DE9F5006569B3 /* AddPayeeTableViewController.swift */,
 			);
