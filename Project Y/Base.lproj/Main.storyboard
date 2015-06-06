@@ -42,7 +42,9 @@
                         <color key="backgroundColor" red="0.82745098039215681" green="0.83921568627450982" blue="0.84313725490196079" alpha="1" colorSpace="calibratedRGB"/>
                         <color key="tintColor" red="0.032931355129999999" green="0.14973736209999999" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Dashboard" id="L0d-yp-W4p"/>
+                    <navigationItem key="navigationItem" title="Dashboard" id="L0d-yp-W4p">
+                        <barButtonItem key="leftBarButtonItem" title="Menu" style="done" id="MLj-bz-j1V"/>
+                    </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="W5J-7L-Pyd" sceneMemberID="firstResponder"/>
             </objects>
@@ -235,7 +237,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
-                        <searchBar key="tableHeaderView" contentMode="redraw" id="lYe-08-Ke5">
+                        <searchBar key="tableHeaderView" contentMode="redraw" id="GU7-qJ-T9T">
                             <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                             <textInputTraits key="textInputTraits"/>
@@ -285,7 +287,9 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="searchBar" destination="GU7-qJ-T9T" id="JWz-uQ-eHw"/>
                         <outlet property="searchDisplayController" destination="b8U-81-QwE" id="hP5-mO-UIr"/>
+                        <outlet property="tableView" destination="GkT-Yd-rhW" id="qtH-32-59Q"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UXC-JX-y5E" userLabel="First Responder" sceneMemberID="firstResponder"/>

@@ -9,7 +9,14 @@
 import UIKit
 import CoreData
 
-class PayFormPayeesTableViewController: UITableViewController, UITableViewDataSource {
+class PayFormPayeesTableViewController: UITableViewController, UITableViewDataSource, UITableViewDelegate, UISearchBarDelegate {
+    
+    @IBOutlet weak var searchBar: UISearchBar!
+
+    //search active or not
+    var searchActive : Bool = false
+    //search bar filtered results
+    var filtered = [NSManagedObject]()
     
     //for the payees table
     var payees = [NSManagedObject]()
@@ -25,6 +32,9 @@ class PayFormPayeesTableViewController: UITableViewController, UITableViewDataSo
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        /* setup delegates */
+        searchBar.delegate = self
         
 //        tableView.registerClass(UITableViewCell.self,
 //            forCellReuseIdentifier: "PayeeCell")
@@ -52,6 +62,9 @@ class PayFormPayeesTableViewController: UITableViewController, UITableViewDataSo
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete method implementation.
         // Return the number of rows in the section.
+        if (searchActive){
+            return filtered.count
+        }
         return payees.count
     }
     
@@ -66,16 +79,31 @@ class PayFormPayeesTableViewController: UITableViewController, UITableViewDataSo
         tableView.dequeueReusableCellWithIdentifier("PayeeCell", forIndexPath: indexPath)
             as! UITableViewCell
         
-        let payee = payees[indexPath.row]
-        
-        if let companyLabel = cell.viewWithTag(103) as? UILabel
-        {
-            companyLabel.text = payee.valueForKey("company") as? String
-        }
-        
-        if let nameLabel = cell.viewWithTag(104) as? UILabel
-        {
-            nameLabel.text = payee.valueForKey("name") as? String
+        if (searchActive){ //search active
+            let payee = filtered[indexPath.row]
+            
+            if let companyLabel = cell.viewWithTag(103) as? UILabel
+            {
+                companyLabel.text = payee.valueForKey("company") as? String
+            }
+            
+            if let nameLabel = cell.viewWithTag(104) as? UILabel
+            {
+                nameLabel.text = payee.valueForKey( "name") as? String
+            }
+            
+        } else { //search not active
+            let payee = payees[indexPath.row]
+            
+            if let companyLabel = cell.viewWithTag(103) as? UILabel
+            {
+                companyLabel.text = payee.valueForKey("company") as? String
+            }
+            
+            if let nameLabel = cell.viewWithTag(104) as? UILabel
+            {
+                nameLabel.text = payee.valueForKey( "name") as? String
+            }
         }
         
         //checkmark if index was selected
@@ -227,6 +255,73 @@ class PayFormPayeesTableViewController: UITableViewController, UITableViewDataSo
                 println("Payees Table - Prepare for segue ran. PayeesTable -> Pay Table")
             }
         }
+    }
+    
+    /* Search Bar conformation */
+    
+    func searchBarTextDidBeginEditing(searchBar: UISearchBar) {
+        searchActive = true;
+    }
+    
+    func searchBarTextDidEndEditing(searchBar: UISearchBar) {
+        searchActive = false;
+    }
+    
+    func searchBarCancelButtonClicked(searchBar: UISearchBar) {
+        searchActive = false;
+    }
+    
+    func searchBarSearchButtonClicked(searchBar: UISearchBar) {
+        searchActive = false;
+    }
+    
+    func searchBar(searchBar: UISearchBar, textDidChange searchText: String) {
+        
+//        filtered = data.filter({ (text) -> Bool in
+//            let tmp: NSString = text
+//            let range = tmp.rangeOfString(searchText, options: NSStringCompareOptions.CaseInsensitiveSearch)
+//            return range.location != NSNotFound
+//        })
+        
+        /* returns entity */
+        let appDelegate:AppDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+        
+        let managedContext = appDelegate.managedObjectContext!
+        
+        let request = NSFetchRequest(entityName:"Payees")
+        
+        request.returnsObjectsAsFaults = false      //will return the instance of the object
+        
+        let sortDescriptor = NSSortDescriptor(key:"company", ascending: true)
+        let sortDescriptors = [sortDescriptor]
+        request.sortDescriptors = sortDescriptors
+        
+        request.predicate = NSPredicate(format:"company contains[search] %@", searchText)
+        
+        var error: NSError?
+        
+        let fetchedResults = managedContext.executeFetchRequest(request, error: &error) as? [NSManagedObject]
+        
+        if let results = fetchedResults {
+            filtered = results
+        } else {
+            println("Could not fetch \(error), \(error!.userInfo)")
+        }
+        
+        /* Debug messages */
+//        var payeeTest = filtered[0]
+//        print(payeeTest.valueForKey("company") as? String)
+        
+//        payeeTest = filtered[1]
+//        print(payeeTest.valueForKey("company") as? String)
+        
+        if(filtered.count == 0){
+            searchActive = false;
+        } else {
+            searchActive = true;
+            print("search active.")
+        }
+        self.tableView.reloadData()
     }
     
 }
