@@ -241,17 +241,30 @@ class PayFormPayeesTableViewController: UITableViewController, UITableViewDataSo
         if segue.identifier == "SaveSelectedPayee" {
             if let cell = sender as? UITableViewCell {
                 
-                let indexPath = tableView.indexPathForCell(cell)
+                if (searchActive){
+                    let indexPath = tableView.indexPathForCell(cell)
+                    
+                    selectedPayeeIndex = indexPath?.row
+                    
+                    //get account index selected's details
+                    let payee = filtered[indexPath!.row]
+                    
+                    //save details to an account object
+                    selectedPayee = Payee(company: (payee.valueForKey("company") as? String)!, name: (payee.valueForKey("name") as? String)!)
+                }
+                else {
+                    let indexPath = tableView.indexPathForCell(cell)
                 
-                selectedPayeeIndex = indexPath?.row
+                    selectedPayeeIndex = indexPath?.row
                 
-                //get account index selected's details
-                let payee = payees[indexPath!.row]
+                    //get account index selected's details
+                    let payee = payees[indexPath!.row]
                 
-                //save details to an account object
-                selectedPayee = Payee(company: (payee.valueForKey("company") as? String)!, name: (payee.valueForKey("name") as? String)!)
+                    //save details to an account object
+                    selectedPayee = Payee(company: (payee.valueForKey("company") as? String)!, name: (payee.valueForKey("name") as? String)!)
+                }
                 
-                //debug
+                /* Debug */
                 println("Payees Table - Prepare for segue ran. PayeesTable -> Pay Table")
             }
         }
