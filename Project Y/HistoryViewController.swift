@@ -1,5 +1,5 @@
 //
-//  SecondViewController.swift
+//  HistoryViewController.swift
 //  Project Y
 //
 //  Created by Adam Khazi on 16/05/2015.
@@ -34,8 +34,11 @@ class HistoryViewController: UITableViewController {
         // set to default value of segment control
         updateSControllerState()
         
-        // load data into NSManagedObject
+        // load appropriate data into appropriate NSManagedObject
         loadTableData()
+        
+        // update table with new data
+        tableView.reloadData()
     }
     
     override func didReceiveMemoryWarning() {
@@ -49,14 +52,16 @@ class HistoryViewController: UITableViewController {
         
         /* Debug */
         println("Segment control value changed: " +
-            "\(sControllerState)")
+            "\(sControllerState.rawValue)")
         
         // update state since value has just changed
         updateSControllerState()
         
+        //load new table data 
+        loadTableData()
         
-        
-        
+        // reload table data after updating state
+        tableView.reloadData()
     }
     
     /* update global variable sControllerState accoroding to 
@@ -111,8 +116,6 @@ class HistoryViewController: UITableViewController {
         let toLabel = cell.viewWithTag(201) as? UILabel
         let amountLabel = cell.viewWithTag(202) as? UILabel
         
-        // single object from array 
-        
         
         switch sControllerState {
             
@@ -154,7 +157,7 @@ class HistoryViewController: UITableViewController {
     
     /* TableView Data model protocol methods End */
     
-    
+    /* fetch data from core data and update appropriate data array for table view */
     func loadTableData(){
         
         // get a reference to App Delegate
@@ -165,17 +168,17 @@ class HistoryViewController: UITableViewController {
         // create a fetch request
         var (fetchRequestOne,fetchRequestTwo) = createFetchRequestBasedOnState()
         
-        //Mi-Ne-Changes
+        //Might-Need-Changes
         // get results by executing request
         let fetchedResults = executeFetchRequestBasedOnState(fetchRequestOne,fetchRequestTwo: fetchRequestTwo, managedContext: managedContext)
         
         //updata data for tableview, otherwise print error
         if fetchedResults.isEmpty
         {
-            updateDataBasedOnState(fetchedResults)
+            println("loadTableData(): No data fetched")
                 
         } else {
-            println("loadTableData(): No data fetched")
+            updateDataBasedOnState(fetchedResults)
         }
 
     }
@@ -197,10 +200,18 @@ class HistoryViewController: UITableViewController {
         case Entity.Payment:
              fetchRequestOne = NSFetchRequest(entityName: Entity.Payment.rawValue)
              
+             //temporary fix
+             fetchRequestTwo = NSFetchRequest(entityName: Entity.Received.rawValue)
+             
+             //debug
+             println("createFetchRequestBasedOnState(): Entity.Payment ")
             return (fetchRequestOne, fetchRequestTwo)
             
         case Entity.Received:
-             fetchRequestOne = NSFetchRequest(entityName: Entity.Payment.rawValue)
+             fetchRequestOne = NSFetchRequest(entityName: Entity.Received.rawValue)
+             
+             //temporary fix
+             fetchRequestTwo = NSFetchRequest(entityName: Entity.Payment.rawValue)
             
             return (fetchRequestOne, fetchRequestTwo)
         }

@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import CoreData
 
 class PayTableTableViewController: UITableViewController {
     
@@ -14,15 +15,13 @@ class PayTableTableViewController: UITableViewController {
     @IBOutlet weak var payAmount: UITextField!
     //From: label
     @IBOutlet weak var selectedAccountNameLabel: UILabel!
+    //To: label
+    @IBOutlet weak var selectedPayeeLabel: UILabel!
     
     //store selected bank account if chosen
     var selectedBankAccount: BankAccount?
-    
     //store selected payee if chosen
     var selectedPayee: Payee?
-    
-    //To: label
-    @IBOutlet weak var selectedPayeeLabel: UILabel!
     
     override func viewDidLoad()
     {
@@ -72,13 +71,46 @@ class PayTableTableViewController: UITableViewController {
         
     }
     
-    @IBAction func makePayment(sender: AnyObject) {
+    /* action that takes place when the confirm button is tapped */
+    @IBAction func makePayment(sender: AnyObject)
+    {
+        savePaymentInfo()
         
-        //switch to history tab
+        //finally switch to history tab
         self.tabBarController?.selectedIndex = 2
         
         /* To use a pre-defined segue programatically*/
         //performSegueWithIdentifier("PaymentMade", sender: self)
+    }
+    
+    func savePaymentInfo()
+    {
+        let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+        
+        let managedContext = appDelegate.managedObjectContext!
+        
+        let entity = NSEntityDescription.entityForName("Payment", inManagedObjectContext: managedContext)
+        
+        let paymentInfo = NSManagedObject(entity: entity!, insertIntoManagedObjectContext: managedContext)
+        
+        paymentInfo.setValue(NSDate(), forKey: "date")
+        paymentInfo.setValue(selectedBankAccount?.accountName, forKey: "account")
+        paymentInfo.setValue(selectedPayee?.company, forKey: "payee")
+        paymentInfo.setValue(s2D(payAmount.text), forKey: "amount")
+        
+        var error: NSError?
+        if !managedContext.save(&error) {
+            println("Could not save \(error), \(error?.userInfo)")
+        } else {
+            println("saved data")
+        }
+    }
+    
+    /* convert string to double */
+    func s2D(stringToConvert: String) -> Double
+    {
+        var stringConversion = NSString(string: stringToConvert)
+        return stringConversion.doubleValue
     }
     
 
