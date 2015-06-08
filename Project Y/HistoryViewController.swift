@@ -81,12 +81,49 @@ class HistoryViewController: UITableViewController {
     
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
-        //default segment control position
-        return paymentsAndReceived.count
+        switch sControllerState {
+            
+            case Entity.PaymentAndReceived:
+            
+                return paymentsAndReceived.count
+            
+            case Entity.Payment:
+            
+                return payments.count
+            
+            case Entity.Received:
+        
+                return received.count
+        }
     }
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         
+        let cell =
+        tableView.dequeueReusableCellWithIdentifier("HistoryCell", forIndexPath: indexPath)
+            as! UITableViewCell
+        
+        let fromLabel = cell.viewWithTag(200) as? UILabel
+        let toLabel = cell.viewWithTag(201) as? UILabel
+        let amountLabel = cell.viewWithTag(202) as? UILabel
+        
+        switch sControllerState {
+            
+            case Entity.PaymentAndReceived:
+            
+                fromLabel.text = paymentsAndReceived.valueForKey("") as? String
+            
+            case Entity.Payment:
+            
+                fromLabel.text = paymentsAndReceived.valueForKey("") as? String
+            
+            case Entity.Received:
+            
+            
+            
+        }
+        
+        return cell
     }
     
     override func dequeueReusableCellWithIdentifier(identifier: String, forIndexPath indexPath: NSIndexPath) -> AnyObject {
@@ -155,19 +192,23 @@ class HistoryViewController: UITableViewController {
         
         // NSManagedObject array to return
         var fetchedResult: [NSManagedObject]!
+        var fetchedResultExtra: [NSManagedObject]!
         
         switch sControllerState {
             
             case Entity.PaymentAndReceived:
                 
                 fetchedResult = managedContext.executeFetchRequest(fetchRequestOne, error:&error) as? [NSManagedObject]
+                
+                fetchedResultExtra = managedContext.executeFetchRequest(fetchRequestTwo, error:&error) as? [NSManagedObject]
             
-                return fetchedResult
+                let fetchResultMerge = fetchedResult + fetchedResultExtra
+                
+                return fetchResultMerge
             
             case Entity.Payment:
                 
                 fetchedResult = managedContext.executeFetchRequest(fetchRequestOne, error:&error) as? [NSManagedObject]
-                
                 
                 return fetchedResult
             
@@ -178,10 +219,25 @@ class HistoryViewController: UITableViewController {
                 return fetchedResult
         }
     }
+    
+    /* update appropriate NSManagedObject array with data based on state */
+    func updateDataBasedOnState(results: [NSManagedObject]) {
         
-        func updateDataBasedOnState(results: [NSManagedObject]) {
+        switch sControllerState {
             
+            case Entity.PaymentAndReceived:
+            
+                paymentsAndReceived = results
+            
+            case Entity.Payment:
+            
+                payments = results
+            
+            case Entity.Received:
+            
+                received = results
         }
+    }
 }
 
 /* Enumeration used to keep state of segment controller in this class */

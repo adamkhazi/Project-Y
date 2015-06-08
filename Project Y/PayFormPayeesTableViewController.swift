@@ -89,7 +89,7 @@ class PayFormPayeesTableViewController: UITableViewController, UITableViewDataSo
             
             if let nameLabel = cell.viewWithTag(104) as? UILabel
             {
-                nameLabel.text = payee.valueForKey( "name") as? String
+                nameLabel.text = payee.valueForKey("name") as? String
             }
             
         } else { //search not active
