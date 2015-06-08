@@ -46,7 +46,7 @@ class PayFormPayeesTableViewController: UITableViewController, UITableViewDataSo
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
     }
     
-    //load data from entity into nsobjectmodel
+    //load data from entity into NSManagedObject
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
         

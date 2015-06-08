@@ -22,6 +22,8 @@
 		661177091B07B40900F34018 /* DataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 661177071B07B40900F34018 /* DataModel.xcdatamodeld */; };
 		6611770B1B07BE0D00F34018 /* AccountSettingsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6611770A1B07BE0D00F34018 /* AccountSettingsTableViewController.swift */; };
 		6611770D1B07C34200F34018 /* AddAccountTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6611770C1B07C34200F34018 /* AddAccountTableViewController.swift */; };
+		662E3FF61B2365F30012FD3B /* DashboardNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 662E3FF51B2365F30012FD3B /* DashboardNavigationController.swift */; };
+		6632D5431B24596A00954BD1 /* HistoryNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6632D5421B24596A00954BD1 /* HistoryNavigationController.swift */; };
 		66AE4BEF1B1DD718006569B3 /* PayFormPayeesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66AE4BEE1B1DD718006569B3 /* PayFormPayeesTableViewController.swift */; };
 		66AE4BF11B1DE5B5006569B3 /* Payee.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66AE4BF01B1DE5B5006569B3 /* Payee.swift */; };
 		66AE4BF31B1DE9F5006569B3 /* AddPayeeTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66AE4BF21B1DE9F5006569B3 /* AddPayeeTableViewController.swift */; };
@@ -58,6 +60,8 @@
 		661177081B07B40900F34018 /* DataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = DataModel.xcdatamodel; sourceTree = "<group>"; };
 		6611770A1B07BE0D00F34018 /* AccountSettingsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountSettingsTableViewController.swift; sourceTree = "<group>"; wrapsLines = 1; };
 		6611770C1B07C34200F34018 /* AddAccountTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddAccountTableViewController.swift; sourceTree = "<group>"; };
+		662E3FF51B2365F30012FD3B /* DashboardNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DashboardNavigationController.swift; sourceTree = "<group>"; };
+		6632D5421B24596A00954BD1 /* HistoryNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HistoryNavigationController.swift; sourceTree = "<group>"; };
 		66AE4BEE1B1DD718006569B3 /* PayFormPayeesTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PayFormPayeesTableViewController.swift; sourceTree = "<group>"; };
 		66AE4BF01B1DE5B5006569B3 /* Payee.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Payee.swift; sourceTree = "<group>"; };
 		66AE4BF21B1DE9F5006569B3 /* AddPayeeTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddPayeeTableViewController.swift; sourceTree = "<group>"; };
@@ -106,19 +110,18 @@
 				661176D91B075C2800F34018 /* AppDelegate.swift */,
 				661177071B07B40900F34018 /* DataModel.xcdatamodeld */,
 				661176DB1B075C2800F34018 /* DashboardViewController.swift */,
-				6610ED221B18662C005A50C5 /* BankAccount.swift */,
-				66AE4BF01B1DE5B5006569B3 /* Payee.swift */,
 				661176FB1B0763BF00F34018 /* BudgetViewController.swift */,
-				661176DD1B075C2800F34018 /* HistoryViewController.swift */,
+				664A39721B235CB8001B01A0 /* History */,
 				661176DF1B075C2800F34018 /* Main.storyboard */,
 				661177051B07AF2600F34018 /* AccountsTableViewController.swift */,
-				661176E41B075C2800F34018 /* LaunchScreen.xib */,
 				661177011B07881200F34018 /* ReceiveViewController.swift */,
-				6611770A1B07BE0D00F34018 /* AccountSettingsTableViewController.swift */,
-				6611770C1B07C34200F34018 /* AddAccountTableViewController.swift */,
+				664A39711B235C8F001B01A0 /* Settings  */,
+				664A39701B235C54001B01A0 /* Store */,
 				66AE4BED1B1DD663006569B3 /* Pay Form */,
 				661176E21B075C2800F34018 /* Images.xcassets */,
+				661176E41B075C2800F34018 /* LaunchScreen.xib */,
 				661176D71B075C2800F34018 /* Supporting Files */,
+				662E3FF71B23663E0012FD3B /* NavigationsControllers */,
 			);
 			path = "Project Y";
 			sourceTree = "<group>";
@@ -146,6 +149,41 @@
 				661176F01B075C2800F34018 /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		662E3FF71B23663E0012FD3B /* NavigationsControllers */ = {
+			isa = PBXGroup;
+			children = (
+				662E3FF51B2365F30012FD3B /* DashboardNavigationController.swift */,
+				6632D5421B24596A00954BD1 /* HistoryNavigationController.swift */,
+			);
+			name = NavigationsControllers;
+			sourceTree = "<group>";
+		};
+		664A39701B235C54001B01A0 /* Store */ = {
+			isa = PBXGroup;
+			children = (
+				6610ED221B18662C005A50C5 /* BankAccount.swift */,
+				66AE4BF01B1DE5B5006569B3 /* Payee.swift */,
+			);
+			name = Store;
+			sourceTree = "<group>";
+		};
+		664A39711B235C8F001B01A0 /* Settings  */ = {
+			isa = PBXGroup;
+			children = (
+				6611770A1B07BE0D00F34018 /* AccountSettingsTableViewController.swift */,
+				6611770C1B07C34200F34018 /* AddAccountTableViewController.swift */,
+			);
+			name = "Settings ";
+			sourceTree = "<group>";
+		};
+		664A39721B235CB8001B01A0 /* History */ = {
+			isa = PBXGroup;
+			children = (
+				661176DD1B075C2800F34018 /* HistoryViewController.swift */,
+			);
+			name = History;
 			sourceTree = "<group>";
 		};
 		66AE4BED1B1DD663006569B3 /* Pay Form */ = {
@@ -261,6 +299,7 @@
 			files = (
 				661176DE1B075C2800F34018 /* HistoryViewController.swift in Sources */,
 				6611770D1B07C34200F34018 /* AddAccountTableViewController.swift in Sources */,
+				6632D5431B24596A00954BD1 /* HistoryNavigationController.swift in Sources */,
 				661177061B07AF2600F34018 /* AccountsTableViewController.swift in Sources */,
 				66AE4BEF1B1DD718006569B3 /* PayFormPayeesTableViewController.swift in Sources */,
 				66AE4BF31B1DE9F5006569B3 /* AddPayeeTableViewController.swift in Sources */,
@@ -269,6 +308,7 @@
 				66AE4BF11B1DE5B5006569B3 /* Payee.swift in Sources */,
 				6610ED231B18662C005A50C5 /* BankAccount.swift in Sources */,
 				6611770B1B07BE0D00F34018 /* AccountSettingsTableViewController.swift in Sources */,
+				662E3FF61B2365F30012FD3B /* DashboardNavigationController.swift in Sources */,
 				661176DC1B075C2800F34018 /* DashboardViewController.swift in Sources */,
 				661177021B07881200F34018 /* ReceiveViewController.swift in Sources */,
 				661177091B07B40900F34018 /* DataModel.xcdatamodeld in Sources */,

@@ -10,6 +10,8 @@ import UIKit
 
 class PayTableTableViewController: UITableViewController {
     
+    //Amount: text field
+    @IBOutlet weak var payAmount: UITextField!
     //From: label
     @IBOutlet weak var selectedAccountNameLabel: UILabel!
     
@@ -25,14 +27,7 @@ class PayTableTableViewController: UITableViewController {
     override func viewDidLoad()
     {
         super.viewDidLoad()
-        
-        
-        
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
 
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem()
     }
 
     //unwind segue - selected account
@@ -76,5 +71,15 @@ class PayTableTableViewController: UITableViewController {
         selectedPayeeLabel.text = selectedPayee?.company
         
     }
+    
+    @IBAction func makePayment(sender: AnyObject) {
+        
+        //switch to history tab
+        self.tabBarController?.selectedIndex = 2
+        
+        /* To use a pre-defined segue programatically*/
+        //performSegueWithIdentifier("PaymentMade", sender: self)
+    }
+    
 
 }
