@@ -134,6 +134,29 @@ class PayFormPayeesTableViewController: UITableViewController, UITableViewDataSo
         cell?.accessoryType = .Checkmark
     }
     
+    //support deleting rows of the table
+    //Override to support editing the table view.
+    override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
+        switch editingStyle {
+        case .Delete:
+            // remove the deleted item from the model
+            let appDelegate =
+            UIApplication.sharedApplication().delegate as! AppDelegate
+            
+            let context:NSManagedObjectContext = appDelegate.managedObjectContext!
+            context.deleteObject(payees[indexPath.row] as NSManagedObject)
+            
+            payees.removeAtIndex(indexPath.row)
+            context.save(nil)
+            
+            //Delete the row from the data source
+            tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
+            
+        default:
+            return
+        }
+    }
+    
     //function that loads payees from entity into nsobject
     func loadPayees(){
         
@@ -157,29 +180,6 @@ class PayFormPayeesTableViewController: UITableViewController, UITableViewDataSo
             payees = results
         } else {
             println("Could not fetch \(error), \(error!.userInfo)")
-        }
-    }
-    
-    //support deleting rows of the table
-    //Override to support editing the table view.
-    override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
-        switch editingStyle {
-        case .Delete:
-            // remove the deleted item from the model
-            let appDelegate =
-            UIApplication.sharedApplication().delegate as! AppDelegate
-            
-            let context:NSManagedObjectContext = appDelegate.managedObjectContext!
-            context.deleteObject(payees[indexPath.row] as NSManagedObject)
-            
-            payees.removeAtIndex(indexPath.row)
-            context.save(nil)
-            
-            //Delete the row from the data source
-            tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
-            
-        default:
-            return
         }
     }
     
@@ -270,7 +270,7 @@ class PayFormPayeesTableViewController: UITableViewController, UITableViewDataSo
         }
     }
     
-    /* Search Bar conformation */
+    /* Search Bar protcol methods */
     
     func searchBarTextDidBeginEditing(searchBar: UISearchBar) {
         searchActive = true;

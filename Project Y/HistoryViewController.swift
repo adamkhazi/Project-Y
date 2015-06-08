@@ -73,7 +73,10 @@ class HistoryViewController: UITableViewController {
             
         case 2:
             sControllerState = Entity.Received
-            
+        
+        default:
+            sControllerState = Entity.PaymentAndReceived
+
         }
     }
     
@@ -103,31 +106,50 @@ class HistoryViewController: UITableViewController {
         tableView.dequeueReusableCellWithIdentifier("HistoryCell", forIndexPath: indexPath)
             as! UITableViewCell
         
+        // references to table row labels
         let fromLabel = cell.viewWithTag(200) as? UILabel
         let toLabel = cell.viewWithTag(201) as? UILabel
         let amountLabel = cell.viewWithTag(202) as? UILabel
         
+        // single object from array 
+        
+        
         switch sControllerState {
             
             case Entity.PaymentAndReceived:
-            
-                fromLabel.text = paymentsAndReceived.valueForKey("") as? String
+                
+                // grab single NSManagedObject from array
+                let paymentsAndReceivedRow = paymentsAndReceived[indexPath.row]
+                
+                // Needs Change
+                // update row labels with information
+                fromLabel?.text = paymentsAndReceivedRow.valueForKey("account") as? String
+                toLabel?.text = paymentsAndReceivedRow.valueForKey("payee") as? String
+                amountLabel?.text = NSString(format:"%f", (paymentsAndReceivedRow.valueForKey("amount") as? Double)!) as String
             
             case Entity.Payment:
-            
-                fromLabel.text = paymentsAndReceived.valueForKey("") as? String
+                
+                // grab single NSManagedObject from array
+                let paymentRow = payments[indexPath.row]
+                
+                // update row labels with information
+                fromLabel?.text = paymentRow.valueForKey("account") as? String
+                toLabel?.text = paymentRow.valueForKey("payee") as? String
+                amountLabel?.text = NSString(format:"%f", (paymentRow.valueForKey("amount") as? Double)!) as String
             
             case Entity.Received:
             
-            
+                // grab single NSManagedObject from array
+                let receivedRow = received[indexPath.row]
+                
+                // update row labels with information
+                fromLabel?.text = receivedRow.valueForKey("payee") as? String
+                toLabel?.text = receivedRow.valueForKey("account") as? String
+                amountLabel?.text = NSString(format:"%f", (receivedRow.valueForKey("amount") as? Double)!) as String
             
         }
         
         return cell
-    }
-    
-    override func dequeueReusableCellWithIdentifier(identifier: String, forIndexPath indexPath: NSIndexPath) -> AnyObject {
-        
     }
     
     /* TableView Data model protocol methods End */
