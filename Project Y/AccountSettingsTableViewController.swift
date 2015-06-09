@@ -9,7 +9,7 @@
 import UIKit
 import CoreData
 
-class AccountSettingsTableViewController: UITableViewController, UITableViewDataSource {
+class AccountSettingsTableViewController: UITVCEnhanced, UITableViewDataSource {
 
     var accounts = [NSManagedObject]()
     
@@ -71,9 +71,10 @@ class AccountSettingsTableViewController: UITableViewController, UITableViewData
         if let bankNameLabel = cell.viewWithTag(101) as? UILabel {
             bankNameLabel.text = account.valueForKey("bank_name") as? String
         }
-        if let bankBalanceLabel = cell.viewWithTag(102) as? UILabel {
+        if let bankBalanceLabel = cell.viewWithTag(102) as? UILabel
+        {
             bankBalanceLabel.text =
-                NSString(format:"%f", (account.valueForKey("balance") as? Double)!) as String        
+                d2S((account.valueForKey("balance") as? Double)!)
         }
         
         return cell

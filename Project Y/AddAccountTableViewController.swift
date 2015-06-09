@@ -9,7 +9,7 @@
 import UIKit
 import CoreData
 
-class AddAccountTableViewController: UITableViewController{
+class AddAccountTableViewController: UITVCEnhanced, UITableViewDataSource{
 
     var bankAccount:BankAccount!
     
@@ -62,7 +62,7 @@ class AddAccountTableViewController: UITableViewController{
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == "SaveAccountDetail" {
-            bankAccount = BankAccount(accountName: self.accountName.text, bankName: self.bankName.text, bankBalance: NSString(string: self.bankBalance.text).doubleValue)
+            bankAccount = BankAccount(accountName: self.accountName.text, bankName: self.bankName.text, bankBalance: s2D(self.bankBalance.text))
         }
     }
     

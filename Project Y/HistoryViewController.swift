@@ -9,7 +9,7 @@
 import UIKit
 import CoreData
 
-class HistoryViewController: UITableViewController {
+class HistoryViewController: UITVCEnhanced {
     
     //Segmented Controller State - default set
     var sControllerState = Entity.PaymentAndReceived
@@ -128,7 +128,7 @@ class HistoryViewController: UITableViewController {
                 // update row labels with information
                 fromLabel?.text = paymentsAndReceivedRow.valueForKey("account") as? String
                 toLabel?.text = paymentsAndReceivedRow.valueForKey("payee") as? String
-                amountLabel?.text = NSString(format:"%f", (paymentsAndReceivedRow.valueForKey("amount") as? Double)!) as String
+                amountLabel?.text = d2S((paymentsAndReceivedRow.valueForKey("amount") as? Double)!)
             
             case Entity.Payment:
                 
@@ -138,7 +138,7 @@ class HistoryViewController: UITableViewController {
                 // update row labels with information
                 fromLabel?.text = paymentRow.valueForKey("account") as? String
                 toLabel?.text = paymentRow.valueForKey("payee") as? String
-                amountLabel?.text = NSString(format:"%f", (paymentRow.valueForKey("amount") as? Double)!) as String
+                amountLabel?.text = d2S((paymentRow.valueForKey("amount") as? Double)!)
             
             case Entity.Received:
             
@@ -148,7 +148,7 @@ class HistoryViewController: UITableViewController {
                 // update row labels with information
                 fromLabel?.text = receivedRow.valueForKey("payee") as? String
                 toLabel?.text = receivedRow.valueForKey("account") as? String
-                amountLabel?.text = NSString(format:"%f", (receivedRow.valueForKey("amount") as? Double)!) as String
+                amountLabel?.text = d2S((receivedRow.valueForKey("amount") as? Double)!)
             
         }
         

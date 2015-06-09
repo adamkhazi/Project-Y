@@ -9,7 +9,7 @@
 import UIKit
 import CoreData
 
-class PayAccountTableViewController: UITableViewController, UITableViewDataSource {
+class PayAccountTableViewController: UITVCEnhanced, UITableViewDataSource {
     
     var accounts = [NSManagedObject]()
 
@@ -21,9 +21,6 @@ class PayAccountTableViewController: UITableViewController, UITableViewDataSourc
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-//        tableView.registerClass(UITableViewCell.self,
-//            forCellReuseIdentifier: "AccountCell")
         
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
@@ -65,7 +62,7 @@ class PayAccountTableViewController: UITableViewController, UITableViewDataSourc
         let account = accounts[indexPath.row]
         
         if let nameLabel = cell.viewWithTag(100) as? UILabel
-        { //3
+        {
             nameLabel.text = account.valueForKey("name") as? String
         }
         if let bankNameLabel = cell.viewWithTag(101) as? UILabel {
@@ -73,7 +70,7 @@ class PayAccountTableViewController: UITableViewController, UITableViewDataSourc
         }
         if let bankBalanceLabel = cell.viewWithTag(102) as? UILabel {
             bankBalanceLabel.text =
-                NSString(format:"%f", (account.valueForKey("balance") as? Double)!) as String
+                d2S((account.valueForKey("balance") as? Double)!)
         }
         
         //checkmark if index was selected
@@ -106,16 +103,16 @@ class PayAccountTableViewController: UITableViewController, UITableViewDataSourc
     
     //function that loads accounts from entity into nsobject
     func loadAccounts(){
-        //1
+        
         let appDelegate =
         UIApplication.sharedApplication().delegate as! AppDelegate
         
         let managedContext = appDelegate.managedObjectContext!
         
-        //2
+        
         let fetchRequest = NSFetchRequest(entityName:"Accounts")
         
-        //3
+        
         var error: NSError?
         
         let fetchedResults =

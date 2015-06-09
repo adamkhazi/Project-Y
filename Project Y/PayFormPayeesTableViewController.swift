@@ -9,7 +9,7 @@
 import UIKit
 import CoreData
 
-class PayFormPayeesTableViewController: UITableViewController, UITableViewDataSource, UITableViewDelegate, UISearchBarDelegate {
+class PayFormPayeesTableViewController: UITVCEnhanced, UITableViewDataSource, UITableViewDelegate, UISearchBarDelegate {
     
     @IBOutlet weak var searchBar: UISearchBar!
 
@@ -236,7 +236,7 @@ class PayFormPayeesTableViewController: UITableViewController, UITableViewDataSo
     //unwind segue back to Pay Table
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         //debug
-        println("ran Payees Table - Prepare for segue ran. PayeesTable -> Pay Table")
+        log("ran Payees Table - PayeesTable -> Pay Table")
         
         if segue.identifier == "SaveSelectedPayee" {
             if let cell = sender as? UITableViewCell {

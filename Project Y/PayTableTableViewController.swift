@@ -9,7 +9,8 @@
 import UIKit
 import CoreData
 
-class PayTableTableViewController: UITableViewController {
+class PayTableTableViewController: UITVCEnhanced {
+    
     
     //Amount: text field
     @IBOutlet weak var payAmount: UITextField!
@@ -44,6 +45,7 @@ class PayTableTableViewController: UITableViewController {
             }
     }
     
+    // updates account chosen label in form
     func updateFromAccountLabel()
     {
         selectedAccountNameLabel.text = selectedBankAccount?.accountName
@@ -106,12 +108,7 @@ class PayTableTableViewController: UITableViewController {
         }
     }
     
-    /* convert string to double */
-    func s2D(stringToConvert: String) -> Double
-    {
-        var stringConversion = NSString(string: stringToConvert)
-        return stringConversion.doubleValue
-    }
+    
     
 
 }

@@ -9,7 +9,7 @@
 import UIKit
 import CoreData
 
-class AddPayeeTableViewController: UITableViewController {
+class AddPayeeTableViewController: UITableViewController, UITableViewDataSource {
 
     //new payee
     var payee: Payee!
