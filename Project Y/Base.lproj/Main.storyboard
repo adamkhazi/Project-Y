@@ -16,10 +16,9 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pWw-K0-wRQ">
-                                <rect key="frame" x="28" y="432" width="61" height="33"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <state key="normal" title="Receive">
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pWw-K0-wRQ">
+                                <rect key="frame" x="16" y="443" width="113" height="35"/>
+                                <state key="normal" backgroundImage="Recieve">
                                     <color key="titleColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -28,9 +27,9 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6QL-tI-cfC">
-                                <rect key="frame" x="262" y="432" width="30" height="33"/>
+                                <rect key="frame" x="189" y="443" width="115" height="35"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <state key="normal" title="Pay">
+                                <state key="normal" backgroundImage="Pay">
                                     <color key="titleColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -304,7 +303,7 @@
                     </connections>
                 </searchDisplayController>
             </objects>
-            <point key="canvasLocation" x="2269" y="10"/>
+            <point key="canvasLocation" x="2269" y="58"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="yl2-sM-qoP">
@@ -399,7 +398,7 @@
         <scene sceneID="HT6-56-VB8">
             <objects>
                 <navigationController id="SXO-d8-kRR" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Settings" id="23f-ng-ip8"/>
+                    <tabBarItem key="tabBarItem" title="Settings" image="second" id="23f-ng-ip8"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="h0O-FA-paD">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -604,7 +603,7 @@
         <scene sceneID="V11-AS-KPb">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="icm-6y-V2g" customClass="DashboardNavigationController" customModule="Project_Y" customModuleProvider="target" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Dashboard" id="EBg-K6-bMK"/>
+                    <tabBarItem key="tabBarItem" title="Dashboard" image="first" id="EBg-K6-bMK"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="bdX-zx-Gho">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -847,6 +846,9 @@
                                                 </label>
                                             </subviews>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="n8u-NT-Xft" kind="push" id="EVJ-BN-jzp"/>
+                                        </connections>
                                     </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" textLabel="skH-st-2QW" detailTextLabel="rhX-or-t22" rowHeight="94" style="IBUITableViewCellStyleValue1" id="PhD-R4-6fl">
                                         <autoresizingMask key="autoresizingMask"/>
@@ -913,7 +915,7 @@
         <scene sceneID="0Pq-xW-dA0">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="80f-t2-5Ec" customClass="HistoryNavigationController" customModule="Project_Y" customModuleProvider="target" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="History" id="Uf4-vJ-ysC"/>
+                    <tabBarItem key="tabBarItem" title="History" image="second" id="Uf4-vJ-ysC"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="hv3-Sa-XSm">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -984,10 +986,101 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RIh-W3-DaO" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="wMw-9K-Fau" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="1704" y="740"/>
+            <point key="canvasLocation" x="1627" y="920"/>
+        </scene>
+        <!--Payees-->
+        <scene sceneID="Mvi-AM-mFL">
+            <objects>
+                <tableViewController id="n8u-NT-Xft" customClass="ReceiveFormPayersTableTVC" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="67" sectionHeaderHeight="10" sectionFooterHeight="10" id="Ev5-4K-drM">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
+                        <searchBar key="tableHeaderView" contentMode="redraw" id="lEj-OD-OYC">
+                            <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                            <textInputTraits key="textInputTraits"/>
+                        </searchBar>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="PayeeCell" editingAccessoryType="checkmark" rowHeight="67" id="pC0-qf-GDa">
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="pC0-qf-GDa" id="3DF-Rx-pAS">
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" tag="103" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6mb-t8-oCS">
+                                            <rect key="frame" x="8" y="15" width="177" height="21"/>
+                                            <attributedString key="attributedText">
+                                                <fragment content="Payer Company Name">
+                                                    <attributes>
+                                                        <color key="NSColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                        <font key="NSFont" size="17" name="HelveticaNeue"/>
+                                                        <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
+                                                    </attributes>
+                                                </fragment>
+                                            </attributedString>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" tag="104" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Payer Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dwj-GH-qdT">
+                                            <rect key="frame" x="8" y="41" width="177" height="21"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                            <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <segue destination="Me1-uM-VRM" kind="unwind" identifier="SaveSelectedPayee" unwindAction="selectedPayee:" id="Tmq-pI-5Y5"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="n8u-NT-Xft" id="dDg-VN-9Jn"/>
+                            <outlet property="delegate" destination="n8u-NT-Xft" id="Mlo-6t-hVo"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Payees" id="gqw-fm-sDl">
+                        <barButtonItem key="rightBarButtonItem" style="done" systemItem="add" id="fH2-1p-HoQ"/>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="searchBar" destination="lEj-OD-OYC" id="hXp-5h-Y4Z"/>
+                        <outlet property="searchDisplayController" destination="b8U-81-QwE" id="WXW-dt-e87"/>
+                        <outlet property="tableView" destination="Ev5-4K-drM" id="lOo-hR-Idj"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="taJ-hS-jUf" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="Me1-uM-VRM" userLabel="Exit" sceneMemberID="exit"/>
+                <searchDisplayController id="VZ1-ai-sxL">
+                    <connections>
+                        <outlet property="delegate" destination="n8u-NT-Xft" id="AMH-xk-M8O"/>
+                        <outlet property="searchContentsController" destination="n8u-NT-Xft" id="fBb-NN-IgC"/>
+                        <outlet property="searchResultsDataSource" destination="n8u-NT-Xft" id="jGi-Sk-U89"/>
+                        <outlet property="searchResultsDelegate" destination="n8u-NT-Xft" id="fMl-Mn-jqS"/>
+                    </connections>
+                </searchDisplayController>
+                <searchDisplayController id="Pm0-1Q-FED">
+                    <connections>
+                        <outlet property="delegate" destination="n8u-NT-Xft" id="rnM-gO-AiU"/>
+                        <outlet property="searchContentsController" destination="n8u-NT-Xft" id="vxG-Jd-ywd"/>
+                        <outlet property="searchResultsDataSource" destination="n8u-NT-Xft" id="HTn-NM-NMx"/>
+                        <outlet property="searchResultsDelegate" destination="n8u-NT-Xft" id="4QY-w8-JeW"/>
+                    </connections>
+                </searchDisplayController>
+                <searchDisplayController id="4OO-PT-Y7k">
+                    <connections>
+                        <outlet property="delegate" destination="n8u-NT-Xft" id="QGX-AR-8Ir"/>
+                        <outlet property="searchContentsController" destination="n8u-NT-Xft" id="C9c-eJ-hmo"/>
+                        <outlet property="searchResultsDataSource" destination="n8u-NT-Xft" id="DZo-JI-psJ"/>
+                        <outlet property="searchResultsDelegate" destination="n8u-NT-Xft" id="OCV-O9-rq2"/>
+                    </connections>
+                </searchDisplayController>
+            </objects>
+            <point key="canvasLocation" x="1627" y="241"/>
         </scene>
     </scenes>
     <resources>
+        <image name="Pay" width="163" height="47"/>
+        <image name="Recieve" width="163" height="47"/>
+        <image name="first" width="30" height="30"/>
         <image name="second" width="30" height="30"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">

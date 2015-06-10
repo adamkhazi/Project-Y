@@ -27,6 +27,7 @@
 		66A5B73F1B26F19E00EDFC2C /* UITVCEnhanced.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66A5B73E1B26F19E00EDFC2C /* UITVCEnhanced.swift */; };
 		66A5B7431B26FB1900EDFC2C /* ReceiveFormTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66A5B7421B26FB1900EDFC2C /* ReceiveFormTVC.swift */; };
 		66A5B7451B27040500EDFC2C /* ReceiveFormAccountsTableTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66A5B7441B27040500EDFC2C /* ReceiveFormAccountsTableTVC.swift */; };
+		66A5B7471B270A0C00EDFC2C /* ReceiveFormPayersTableTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66A5B7461B270A0C00EDFC2C /* ReceiveFormPayersTableTVC.swift */; };
 		66AE4BEF1B1DD718006569B3 /* PayFormPayeesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66AE4BEE1B1DD718006569B3 /* PayFormPayeesTableViewController.swift */; };
 		66AE4BF11B1DE5B5006569B3 /* Payee.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66AE4BF01B1DE5B5006569B3 /* Payee.swift */; };
 		66AE4BF31B1DE9F5006569B3 /* AddPayeeTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66AE4BF21B1DE9F5006569B3 /* AddPayeeTableViewController.swift */; };
@@ -68,6 +69,7 @@
 		66A5B73E1B26F19E00EDFC2C /* UITVCEnhanced.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UITVCEnhanced.swift; sourceTree = "<group>"; };
 		66A5B7421B26FB1900EDFC2C /* ReceiveFormTVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReceiveFormTVC.swift; sourceTree = "<group>"; };
 		66A5B7441B27040500EDFC2C /* ReceiveFormAccountsTableTVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReceiveFormAccountsTableTVC.swift; sourceTree = "<group>"; };
+		66A5B7461B270A0C00EDFC2C /* ReceiveFormPayersTableTVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReceiveFormPayersTableTVC.swift; sourceTree = "<group>"; };
 		66AE4BEE1B1DD718006569B3 /* PayFormPayeesTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PayFormPayeesTableViewController.swift; sourceTree = "<group>"; };
 		66AE4BF01B1DE5B5006569B3 /* Payee.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Payee.swift; sourceTree = "<group>"; };
 		66AE4BF21B1DE9F5006569B3 /* AddPayeeTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddPayeeTableViewController.swift; sourceTree = "<group>"; };
@@ -207,6 +209,7 @@
 			children = (
 				66A5B7421B26FB1900EDFC2C /* ReceiveFormTVC.swift */,
 				66A5B7441B27040500EDFC2C /* ReceiveFormAccountsTableTVC.swift */,
+				66A5B7461B270A0C00EDFC2C /* ReceiveFormPayersTableTVC.swift */,
 			);
 			name = "Receive Form";
 			sourceTree = "<group>";
@@ -339,6 +342,7 @@
 				662E3FF61B2365F30012FD3B /* DashboardNavigationController.swift in Sources */,
 				661176DC1B075C2800F34018 /* DashboardViewController.swift in Sources */,
 				661177091B07B40900F34018 /* DataModel.xcdatamodeld in Sources */,
+				66A5B7471B270A0C00EDFC2C /* ReceiveFormPayersTableTVC.swift in Sources */,
 				661177041B079E5F00F34018 /* PayTableTableViewController.swift in Sources */,
 				66A5B7431B26FB1900EDFC2C /* ReceiveFormTVC.swift in Sources */,
 				661176FC1B0763BF00F34018 /* BudgetViewController.swift in Sources */,
@@ -468,9 +472,11 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer: Adam Khazi (FX8DGKUQH8)";
 				INFOPLIST_FILE = "Project Y/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -478,9 +484,11 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer: Adam Khazi (FX8DGKUQH8)";
 				INFOPLIST_FILE = "Project Y/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
