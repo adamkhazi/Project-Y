@@ -11,6 +11,10 @@
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
         <relationship name="newRelationship" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Payment" inverseName="payeeSelection" inverseEntity="Payment" syncable="YES"/>
     </entity>
+    <entity name="Payer" syncable="YES">
+        <attribute name="company" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
     <entity name="Payment" syncable="YES">
         <attribute name="account" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="amount" optional="YES" attributeType="Decimal" defaultValueString="0.0" syncable="YES"/>
@@ -30,5 +34,6 @@
         <element name="Payees" positionX="-7668" positionY="-3141" width="128" height="88"/>
         <element name="Payment" positionX="-7668" positionY="-2914" width="128" height="133"/>
         <element name="Received" positionX="-7839" positionY="-2911" width="128" height="103"/>
+        <element name="Payer" positionX="-7830" positionY="-2979" width="128" height="73"/>
     </elements>
 </model>

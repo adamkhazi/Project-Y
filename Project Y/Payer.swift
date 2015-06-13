@@ -1,15 +1,15 @@
 //
-//  Payee.swift
+//  Payer.swift
 //  Project Y
 //
-//  Created by Adam Khazi on 02/06/2015.
+//  Created by Adam Khazi on 11/06/2015.
 //  Copyright (c) 2015 Adam Khazi. All rights reserved.
 //
 
 import Foundation
 import UIKit
 
-class Payee: NSObject {
+class Payer: NSObject {
     
     //Name of company - required
     var company: String

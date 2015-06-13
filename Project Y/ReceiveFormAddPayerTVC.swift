@@ -1,22 +1,23 @@
 //
-//  AddPayeeTableViewController.swift
+//  ReceiveFormAddPayerTVC.swift
 //  Project Y
 //
-//  Created by Adam Khazi on 02/06/2015.
+//  Created by Adam Khazi on 11/06/2015.
 //  Copyright (c) 2015 Adam Khazi. All rights reserved.
 //
 
 import UIKit
 import CoreData
 
-class AddPayeeTableViewController: UITableViewController, UITableViewDataSource {
-
-    // new payee
-    var payee: Payee!
+class ReceiveFormAddPayerTVC: UITableViewController {
+    
+    // new payer
+    var payer: Payer!
     
     // field connectors
     @IBOutlet weak var companyField: UITextField!
     @IBOutlet weak var nameField: UITextField!
+    
     
     override func viewDidLoad() {
         
@@ -33,7 +34,7 @@ class AddPayeeTableViewController: UITableViewController, UITableViewDataSource 
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
+
     /* Table view data source protocol methods START */
     
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
@@ -60,16 +61,16 @@ class AddPayeeTableViewController: UITableViewController, UITableViewDataSource 
     }
     
     /* Table view data source protocol methods END */
-    
+
     //prepare for unwind
     //saves field data into payee object
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        if segue.identifier == "SavePayeeDetail" {
-            payee = Payee(company: companyField.text, name: nameField.text)
+        if segue.identifier == "SavePayerDetail" {
+            payer = Payer(company: companyField.text, name: nameField.text)
             
             //debug
             println("Add Screen - Prepare for segue ran. Add Screen -> Payees table")
         }
     }
-    
+
 }

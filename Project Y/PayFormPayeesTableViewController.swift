@@ -157,19 +157,16 @@ class PayFormPayeesTableViewController: UITVCEnhanced, UITableViewDataSource, UI
         }
     }
     
-    //function that loads payees from entity into nsobject
+    // loads payees from entity into NSObject Array
     func loadPayees(){
         
-        //1
         let appDelegate =
         UIApplication.sharedApplication().delegate as! AppDelegate
         
         let managedContext = appDelegate.managedObjectContext!
         
-        //2
         let fetchRequest = NSFetchRequest(entityName:"Payees")
         
-        //3
         var error: NSError?
         
         let fetchedResults =
@@ -182,6 +179,8 @@ class PayFormPayeesTableViewController: UITVCEnhanced, UITableViewDataSource, UI
             println("Could not fetch \(error), \(error!.userInfo)")
         }
     }
+    
+    /* Unwind segue methods from Add Payee scene START */
     
     //unwind segue - save payee - from Add Payee Detail screen
     @IBAction func savePayeeDetail(segue:UIStoryboardSegue) {
@@ -205,6 +204,8 @@ class PayFormPayeesTableViewController: UITVCEnhanced, UITableViewDataSource, UI
     @IBAction func cancelSavePayee(segue:UIStoryboardSegue) {
         
     }
+    
+    /* Unwind segue methods from Add Payee scene END */
     
     //saves to sql entity 'Payees'
     func savePayee(payeeDetail: Payee) {

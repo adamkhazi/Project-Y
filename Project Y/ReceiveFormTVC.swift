@@ -21,6 +21,8 @@ class ReceiveFormTVC: UITVCEnhanced, UITableViewDataSource {
     
     //store selected bank account if chosen
     var selectedBankAccount: BankAccount?
+    //store selected payer if chosen
+    var selectedPayer: Payer?
     
     
     override func viewDidLoad()
@@ -28,6 +30,8 @@ class ReceiveFormTVC: UITVCEnhanced, UITableViewDataSource {
         super.viewDidLoad()
         
     }
+    
+    /* Unwind Segue for selected account table view cell START */
     
     //unwind segue - selected account
     @IBAction func selectedAccount(segue:UIStoryboardSegue)
@@ -49,5 +53,33 @@ class ReceiveFormTVC: UITVCEnhanced, UITableViewDataSource {
     {
         accountChosenLabel.text = selectedBankAccount?.accountName
     }
+    
+    /* Unwind Segue for selected account table view cell END */
+    
+    /* Unwind Segue for selected payer table view cell START */
+    
+    //unwind segue - selected Payer
+    @IBAction func selectedPayer(segue:UIStoryboardSegue)
+    {
+        if let receiveFormPayersTableTVC = segue.sourceViewController as? ReceiveFormPayersTableTVC{
+            
+            self.selectedPayer = Payer(
+                company: receiveFormPayersTableTVC.selectedPayer.company,
+                name: receiveFormPayersTableTVC.selectedPayer.name)
+            
+            updateToPayerLabel()
+            
+            //debug
+            log("Unwind Segue ran. PayeesTable -> Pay Table")
+        }
+    }
+    
+    func updateToPayerLabel()
+    {
+        payerChosenLabel.text = selectedPayer?.company
+        
+    }
+    
+    /* Unwind Segue for selected payer table view cell END */
     
 }
