@@ -2,6 +2,8 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="49e-Tb-3d3">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+        <capability name="Alignment constraints to the first baseline" minToolsVersion="6.0"/>
+        <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
@@ -20,43 +22,88 @@
                             <userLayoutGuide location="300" affinity="minY"/>
                         </userGuides>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleAspectFit" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pWw-K0-wRQ">
-                                <rect key="frame" x="81" y="443" width="119" height="35"/>
-                                <state key="normal" backgroundImage="Recieve">
-                                    <color key="titleColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                            <button opaque="NO" contentMode="scaleAspectFit" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="6QL-tI-cfC">
+                                <rect key="frame" x="227" y="443" width="204" height="52"/>
+                                <color key="backgroundColor" red="0.95519904929999999" green="0.12918013810000001" blue="0.17721761080000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal">
+                                    <attributedString key="attributedTitle">
+                                        <fragment content="Make Payment">
+                                            <attributes>
+                                                <color key="NSColor" red="0.97646244234210744" green="0.98957872627057764" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                <font key="NSFont" size="23" name="GillSans-Bold"/>
+                                                <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
+                                            </attributes>
+                                        </fragment>
+                                    </attributedString>
                                 </state>
-                                <connections>
-                                    <segue destination="lwm-KF-k6V" kind="show" id="22e-ol-YSS"/>
-                                </connections>
-                            </button>
-                            <imageView userInteractionEnabled="NO" alpha="0.49999999999999961" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="KUKUA" translatesAutoresizingMaskIntoConstraints="NO" id="uJg-WF-jS4">
-                                <rect key="frame" x="81" y="72" width="438" height="228"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="296" id="ISF-SW-T1I"/>
-                                </constraints>
-                            </imageView>
-                            <button opaque="NO" contentMode="scaleAspectFit" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6QL-tI-cfC">
-                                <rect key="frame" x="259" y="443" width="112" height="35"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <state key="normal" backgroundImage="Pay">
-                                    <color key="titleColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="172" y="443" width="204" height="52"/>
+                                </variation>
+                                <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
+                                    <rect key="frame" x="201" y="664" width="183" height="67"/>
+                                </variation>
                                 <connections>
                                     <segue destination="LRU-C4-V8C" kind="show" id="gZO-wY-EWO"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleAspectFit" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="pWw-K0-wRQ">
+                                <rect key="frame" x="23" y="443" width="119" height="52"/>
+                                <color key="backgroundColor" red="0.95519904929999999" green="0.12918013810000001" blue="0.17721761080000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal">
+                                    <attributedString key="attributedTitle">
+                                        <fragment content="Receive">
+                                            <attributes>
+                                                <color key="NSColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                <font key="NSFont" size="23" name="GillSans-Bold"/>
+                                                <font key="NSOriginalFont" size="23" name="GillSans-Bold"/>
+                                                <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
+                                            </attributes>
+                                        </fragment>
+                                    </attributedString>
+                                </state>
+                                <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
+                                    <rect key="frame" x="16" y="664" width="118" height="67"/>
+                                </variation>
+                                <connections>
+                                    <segue destination="lwm-KF-k6V" kind="show" id="22e-ol-YSS"/>
+                                </connections>
+                            </button>
                         </subviews>
-                        <color key="backgroundColor" red="0.86540448029779227" green="0.87702898359085313" blue="0.88626499368686873" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" red="0.95379577020202022" green="0.95379577020202022" blue="0.95379577020202022" alpha="1" colorSpace="calibratedRGB"/>
                         <color key="tintColor" red="0.032931355129999999" green="0.14973736209999999" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstItem="uJg-WF-jS4" firstAttribute="leading" secondItem="pWw-K0-wRQ" secondAttribute="leading" id="5BL-aU-Ibl"/>
-                            <constraint firstItem="uJg-WF-jS4" firstAttribute="trailing" secondItem="tsR-hK-woN" secondAttribute="trailingMargin" id="GiA-Ql-hO3"/>
-                            <constraint firstItem="uJg-WF-jS4" firstAttribute="top" secondItem="aim-0j-OvZ" secondAttribute="bottom" constant="8" symbolic="YES" id="WXs-fM-VcM"/>
-                            <constraint firstItem="uJg-WF-jS4" firstAttribute="leading" secondItem="tsR-hK-woN" secondAttribute="leadingMargin" id="j4F-Lw-58F"/>
-                            <constraint firstItem="6QL-tI-cfC" firstAttribute="top" secondItem="uJg-WF-jS4" secondAttribute="bottom" constant="75" id="r1S-0y-IUI"/>
+                            <constraint firstItem="pWw-K0-wRQ" firstAttribute="top" secondItem="aim-0j-OvZ" secondAttribute="bottom" constant="600" id="EQ3-7p-pqY"/>
+                            <constraint firstItem="ir8-oh-zEq" firstAttribute="top" secondItem="pWw-K0-wRQ" secondAttribute="bottom" constant="20" id="Ns3-DU-mSA"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="6QL-tI-cfC" secondAttribute="trailingMargin" id="OHe-kl-Vkl"/>
+                            <constraint firstItem="pWw-K0-wRQ" firstAttribute="top" secondItem="6QL-tI-cfC" secondAttribute="top" id="atP-UI-tTV"/>
+                            <constraint firstItem="pWw-K0-wRQ" firstAttribute="baseline" secondItem="6QL-tI-cfC" secondAttribute="firstBaseline" id="br6-k4-T78"/>
+                            <constraint firstItem="pWw-K0-wRQ" firstAttribute="leading" secondItem="tsR-hK-woN" secondAttribute="leadingMargin" id="j8k-kT-UFs"/>
+                            <constraint firstItem="6QL-tI-cfC" firstAttribute="baseline" secondItem="pWw-K0-wRQ" secondAttribute="firstBaseline" id="k2z-Sw-qQ0"/>
                         </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="EQ3-7p-pqY"/>
+                                <exclude reference="atP-UI-tTV"/>
+                                <exclude reference="br6-k4-T78"/>
+                                <exclude reference="j8k-kT-UFs"/>
+                                <exclude reference="OHe-kl-Vkl"/>
+                                <exclude reference="k2z-Sw-qQ0"/>
+                                <exclude reference="Ns3-DU-mSA"/>
+                            </mask>
+                        </variation>
+                        <variation key="heightClass=regular-widthClass=compact">
+                            <mask key="constraints">
+                                <include reference="EQ3-7p-pqY"/>
+                                <include reference="atP-UI-tTV"/>
+                                <include reference="br6-k4-T78"/>
+                                <include reference="j8k-kT-UFs"/>
+                                <include reference="OHe-kl-Vkl"/>
+                                <include reference="k2z-Sw-qQ0"/>
+                                <include reference="Ns3-DU-mSA"/>
+                            </mask>
+                        </variation>
                     </view>
                     <navigationItem key="navigationItem" title="Dashboard" id="L0d-yp-W4p"/>
                 </viewController>
@@ -226,7 +273,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bSI-Dd-6t7" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="8ob-Bm-34C" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="4254.375" y="-728.87323943661966"/>
+            <point key="canvasLocation" x="4254.375" y="-728.87323943661954"/>
         </scene>
         <!--Payees-->
         <scene sceneID="qLB-cu-N1i">
@@ -318,7 +365,7 @@
                     </connections>
                 </searchDisplayController>
             </objects>
-            <point key="canvasLocation" x="5381.25" y="-6.3380281690140841"/>
+            <point key="canvasLocation" x="5381.25" y="-6.3380281690140832"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="yl2-sM-qoP">
@@ -364,7 +411,7 @@
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Profile" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dji-Q5-kqc">
                                                     <rect key="frame" x="66" y="17" width="49" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
@@ -382,7 +429,7 @@
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Accounts" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pM4-kc-Lc7">
                                                     <rect key="frame" x="66" y="17" width="73" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
@@ -407,7 +454,7 @@
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="About" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5lL-dU-6ue">
                                                     <rect key="frame" x="66" y="17" width="47" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
@@ -425,7 +472,7 @@
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="FAQs" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PQa-gQ-DAA">
                                                     <rect key="frame" x="66" y="17" width="42" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
@@ -443,7 +490,7 @@
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Reports" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lJ9-cM-rS2">
                                                     <rect key="frame" x="66" y="17" width="61" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
@@ -478,7 +525,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PdV-cQ-3z7" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2021.25" y="479.57746478873236"/>
+            <point key="canvasLocation" x="-2021.25" y="479.5774647887323"/>
         </scene>
         <!--Accounts-->
         <scene sceneID="jPh-mu-tja">
@@ -676,7 +723,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="52t-mB-t8H" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1070.625" y="-158.4507042253521"/>
+            <point key="canvasLocation" x="1070.625" y="-158.45070422535207"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="vKV-OR-nkv">
@@ -1217,7 +1264,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Sxs-uu-HcV" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="FIR-bM-Vs0" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="4483.125" y="370.77464788732391"/>
+            <point key="canvasLocation" x="4483.125" y="370.77464788732385"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="wsB-B6-dCk">
@@ -1235,7 +1282,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="q9I-4W-wAz" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3485.625" y="370.77464788732391"/>
+            <point key="canvasLocation" x="3485.625" y="370.77464788732385"/>
         </scene>
         <!--Budgets-->
         <scene sceneID="3qV-M5-ev5">
@@ -1258,9 +1305,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="KUKUA" width="1335" height="720"/>
-        <image name="Pay" width="163" height="47"/>
-        <image name="Recieve" width="163" height="47"/>
         <image name="about-settings-icon" width="32" height="32"/>
         <image name="accounts-settings-icon" width="32" height="32"/>
         <image name="budget-tab-icon" width="32" height="32"/>
