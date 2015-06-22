@@ -7,7 +7,7 @@
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
-        <!--Dashboard-->
+        <!--Kukua-->
         <scene sceneID="hNz-n2-bh7">
             <objects>
                 <viewController id="9pv-A4-QxB" customClass="DashboardViewController" customModule="Project_Y" customModuleProvider="target" sceneMemberID="viewController">
@@ -19,36 +19,11 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <userGuides>
-                            <userLayoutGuide location="300" affinity="minY"/>
+                            <userLayoutGuide location="289" affinity="minY"/>
                         </userGuides>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleAspectFit" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="6QL-tI-cfC">
-                                <rect key="frame" x="227" y="443" width="204" height="52"/>
-                                <color key="backgroundColor" red="0.95519904929999999" green="0.12918013810000001" blue="0.17721761080000001" alpha="1" colorSpace="calibratedRGB"/>
-                                <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <state key="normal">
-                                    <attributedString key="attributedTitle">
-                                        <fragment content="Make Payment">
-                                            <attributes>
-                                                <color key="NSColor" red="0.97646244234210744" green="0.98957872627057764" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                                <font key="NSFont" size="23" name="GillSans-Bold"/>
-                                                <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
-                                            </attributes>
-                                        </fragment>
-                                    </attributedString>
-                                </state>
-                                <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="172" y="443" width="204" height="52"/>
-                                </variation>
-                                <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
-                                    <rect key="frame" x="201" y="664" width="183" height="67"/>
-                                </variation>
-                                <connections>
-                                    <segue destination="LRU-C4-V8C" kind="show" id="gZO-wY-EWO"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleAspectFit" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="pWw-K0-wRQ">
-                                <rect key="frame" x="23" y="443" width="119" height="52"/>
+                            <button opaque="NO" contentMode="scaleAspectFit" misplaced="YES" placeholderIntrinsicWidth="120" placeholderIntrinsicHeight="52" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="pWw-K0-wRQ">
+                                <rect key="frame" x="23" y="443" width="120" height="42"/>
                                 <color key="backgroundColor" red="0.95519904929999999" green="0.12918013810000001" blue="0.17721761080000001" alpha="1" colorSpace="calibratedRGB"/>
                                 <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <state key="normal">
@@ -56,56 +31,88 @@
                                         <fragment content="Receive">
                                             <attributes>
                                                 <color key="NSColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                                <font key="NSFont" size="23" name="GillSans-Bold"/>
+                                                <font key="NSFont" size="20" name="GillSans-Bold"/>
                                                 <font key="NSOriginalFont" size="23" name="GillSans-Bold"/>
                                                 <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
                                             </attributes>
                                         </fragment>
                                     </attributedString>
                                 </state>
-                                <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
-                                    <rect key="frame" x="16" y="664" width="118" height="67"/>
-                                </variation>
                                 <connections>
                                     <segue destination="lwm-KF-k6V" kind="show" id="22e-ol-YSS"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleAspectFit" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="6QL-tI-cfC">
+                                <rect key="frame" x="219" y="443" width="204" height="42"/>
+                                <color key="backgroundColor" red="0.95519904929999999" green="0.12918013810000001" blue="0.17721761080000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="183" id="0pY-Vo-voh"/>
+                                    <constraint firstAttribute="height" constant="67" id="3PS-Ui-RAH"/>
+                                    <constraint firstAttribute="width" constant="204" id="MWa-pt-ZlN">
+                                        <variation key="heightClass=regular-widthClass=compact" constant="183"/>
+                                    </constraint>
+                                </constraints>
+                                <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal">
+                                    <attributedString key="attributedTitle">
+                                        <fragment content="Make Payment">
+                                            <attributes>
+                                                <color key="NSColor" red="0.97646244234210744" green="0.98957872627057764" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                <font key="NSFont" size="20" name="GillSans-Bold"/>
+                                                <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
+                                            </attributes>
+                                        </fragment>
+                                    </attributedString>
+                                </state>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="0pY-Vo-voh"/>
+                                        <exclude reference="3PS-Ui-RAH"/>
+                                    </mask>
+                                </variation>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="172" y="443" width="204" height="52"/>
+                                </variation>
+                                <variation key="heightClass=regular-widthClass=compact">
+                                    <mask key="constraints">
+                                        <include reference="0pY-Vo-voh"/>
+                                        <include reference="3PS-Ui-RAH"/>
+                                    </mask>
+                                </variation>
+                                <connections>
+                                    <segue destination="LRU-C4-V8C" kind="show" id="gZO-wY-EWO"/>
                                 </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="0.95379577020202022" green="0.95379577020202022" blue="0.95379577020202022" alpha="1" colorSpace="calibratedRGB"/>
                         <color key="tintColor" red="0.032931355129999999" green="0.14973736209999999" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstItem="pWw-K0-wRQ" firstAttribute="top" secondItem="aim-0j-OvZ" secondAttribute="bottom" constant="600" id="EQ3-7p-pqY"/>
-                            <constraint firstItem="ir8-oh-zEq" firstAttribute="top" secondItem="pWw-K0-wRQ" secondAttribute="bottom" constant="20" id="Ns3-DU-mSA"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="6QL-tI-cfC" secondAttribute="trailingMargin" id="OHe-kl-Vkl"/>
-                            <constraint firstItem="pWw-K0-wRQ" firstAttribute="top" secondItem="6QL-tI-cfC" secondAttribute="top" id="atP-UI-tTV"/>
-                            <constraint firstItem="pWw-K0-wRQ" firstAttribute="baseline" secondItem="6QL-tI-cfC" secondAttribute="firstBaseline" id="br6-k4-T78"/>
-                            <constraint firstItem="pWw-K0-wRQ" firstAttribute="leading" secondItem="tsR-hK-woN" secondAttribute="leadingMargin" id="j8k-kT-UFs"/>
-                            <constraint firstItem="6QL-tI-cfC" firstAttribute="baseline" secondItem="pWw-K0-wRQ" secondAttribute="firstBaseline" id="k2z-Sw-qQ0"/>
+                            <constraint firstItem="6QL-tI-cfC" firstAttribute="top" secondItem="pWw-K0-wRQ" secondAttribute="top" id="ESh-Eb-ZGC"/>
+                            <constraint firstItem="pWw-K0-wRQ" firstAttribute="leading" secondItem="tsR-hK-woN" secondAttribute="leadingMargin" constant="7" id="Hu4-kX-cNa">
+                                <variation key="heightClass=regular-widthClass=compact" constant="0.0"/>
+                            </constraint>
+                            <constraint firstItem="pWw-K0-wRQ" firstAttribute="baseline" secondItem="6QL-tI-cfC" secondAttribute="firstBaseline" id="Jle-72-LZJ"/>
+                            <constraint firstItem="6QL-tI-cfC" firstAttribute="trailing" secondItem="tsR-hK-woN" secondAttribute="trailingMargin" id="fII-Gc-eWr"/>
+                            <constraint firstItem="6QL-tI-cfC" firstAttribute="baseline" secondItem="pWw-K0-wRQ" secondAttribute="firstBaseline" id="fat-jn-doD"/>
+                            <constraint firstItem="ir8-oh-zEq" firstAttribute="top" secondItem="pWw-K0-wRQ" secondAttribute="bottom" constant="56" id="mOH-9b-npx">
+                                <variation key="heightClass=regular-widthClass=compact" constant="20"/>
+                            </constraint>
+                            <constraint firstItem="6QL-tI-cfC" firstAttribute="leading" secondItem="pWw-K0-wRQ" secondAttribute="trailing" constant="85" id="tWr-Fh-iUW">
+                                <variation key="heightClass=regular-widthClass=compact" constant="67"/>
+                            </constraint>
                         </constraints>
                         <variation key="default">
                             <mask key="constraints">
-                                <exclude reference="EQ3-7p-pqY"/>
-                                <exclude reference="atP-UI-tTV"/>
-                                <exclude reference="br6-k4-T78"/>
-                                <exclude reference="j8k-kT-UFs"/>
-                                <exclude reference="OHe-kl-Vkl"/>
-                                <exclude reference="k2z-Sw-qQ0"/>
-                                <exclude reference="Ns3-DU-mSA"/>
+                                <exclude reference="fII-Gc-eWr"/>
                             </mask>
                         </variation>
                         <variation key="heightClass=regular-widthClass=compact">
                             <mask key="constraints">
-                                <include reference="EQ3-7p-pqY"/>
-                                <include reference="atP-UI-tTV"/>
-                                <include reference="br6-k4-T78"/>
-                                <include reference="j8k-kT-UFs"/>
-                                <include reference="OHe-kl-Vkl"/>
-                                <include reference="k2z-Sw-qQ0"/>
-                                <include reference="Ns3-DU-mSA"/>
+                                <include reference="fII-Gc-eWr"/>
                             </mask>
                         </variation>
                     </view>
-                    <navigationItem key="navigationItem" title="Dashboard" id="L0d-yp-W4p"/>
+                    <navigationItem key="navigationItem" title="Kukua" id="L0d-yp-W4p"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="W5J-7L-Pyd" sceneMemberID="firstResponder"/>
             </objects>
@@ -221,10 +228,10 @@
         <scene sceneID="SlF-Y8-fIS">
             <objects>
                 <tableViewController id="OMa-tE-otz" customClass="PayAccountTableViewController" customModule="Project_Y" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" rowHeight="67" sectionHeaderHeight="10" sectionFooterHeight="10" id="DuD-r1-Jvx">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" id="DuD-r1-Jvx">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="0.93725490196078431" green="0.93725490196078431" blue="0.95686274509803926" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                         <prototypes>
                             <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="AccountCell" editingAccessoryType="checkmark" rowHeight="67" id="rBj-aN-I8b">
                                 <autoresizingMask key="autoresizingMask"/>
@@ -514,7 +521,13 @@
         <scene sceneID="HT6-56-VB8">
             <objects>
                 <navigationController id="SXO-d8-kRR" customClass="SettingsNavigationController" customModule="Project_Y" customModuleProvider="target" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Settings" image="settings-tab-icon" id="23f-ng-ip8"/>
+                    <tabBarItem key="tabBarItem" title="Settings" image="settings-tab-icon" id="23f-ng-ip8">
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="color" keyPath="tintColor">
+                                <color key="value" red="0.95519904929999999" green="0.12918013810000001" blue="0.17721761080000001" alpha="1" colorSpace="calibratedRGB"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
+                    </tabBarItem>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="h0O-FA-paD">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -710,7 +723,14 @@
         <scene sceneID="V11-AS-KPb">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="icm-6y-V2g" customClass="DashboardNavigationController" customModule="Project_Y" customModuleProvider="target" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Dashboard" image="dashboard-tab-icon" id="EBg-K6-bMK"/>
+                    <tabBarItem key="tabBarItem" title="Dashboard" image="dashboard-tab-icon" id="EBg-K6-bMK">
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="image" keyPath="selectedImage" value="dashboard-tab-icon-filled"/>
+                            <userDefinedRuntimeAttribute type="color" keyPath="tintColor">
+                                <color key="value" red="0.95519904929999999" green="0.12918013810000001" blue="0.17721761080000001" alpha="1" colorSpace="calibratedRGB"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
+                    </tabBarItem>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="bdX-zx-Gho">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -1022,7 +1042,13 @@
         <scene sceneID="0Pq-xW-dA0">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="80f-t2-5Ec" customClass="HistoryNavigationController" customModule="Project_Y" customModuleProvider="target" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="History" image="history-tab-icon" id="Uf4-vJ-ysC"/>
+                    <tabBarItem key="tabBarItem" title="History" image="history-tab-icon" id="Uf4-vJ-ysC">
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="color" keyPath="tintColor">
+                                <color key="value" red="0.95519904929999999" green="0.12918013810000001" blue="0.17721761080000001" alpha="1" colorSpace="calibratedRGB"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
+                    </tabBarItem>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="hv3-Sa-XSm">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -1288,7 +1314,13 @@
         <scene sceneID="3qV-M5-ev5">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="B73-UQ-UeB" customClass="BudgetNavigationController" customModule="Project_Y" customModuleProvider="target" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Budgets" image="budget-tab-icon" id="Twp-VZ-s2Z"/>
+                    <tabBarItem key="tabBarItem" title="Budgets" image="budget-tab-icon" id="Twp-VZ-s2Z">
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="color" keyPath="tintColor">
+                                <color key="value" red="0.95519904929999999" green="0.12918013810000001" blue="0.17721761080000001" alpha="1" colorSpace="calibratedRGB"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
+                    </tabBarItem>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="vmt-Xn-yj7">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -1309,6 +1341,7 @@
         <image name="accounts-settings-icon" width="32" height="32"/>
         <image name="budget-tab-icon" width="32" height="32"/>
         <image name="dashboard-tab-icon" width="32" height="32"/>
+        <image name="dashboard-tab-icon-filled" width="32" height="32"/>
         <image name="faqs-settings-icon" width="32" height="32"/>
         <image name="history-tab-icon" width="32" height="32"/>
         <image name="profile-settings-icon" width="32" height="32"/>

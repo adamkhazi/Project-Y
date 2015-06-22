@@ -3,11 +3,12 @@
     {
       "idiom" : "universal",
       "scale" : "1x",
-      "filename" : "Recieve.png"
+      "filename" : "settings-tab-icon-filled.png"
     },
     {
       "idiom" : "universal",
-      "scale" : "2x"
+      "scale" : "2x",
+      "filename" : "settings-tab-icon-filled@2x.png"
     },
     {
       "idiom" : "universal",
