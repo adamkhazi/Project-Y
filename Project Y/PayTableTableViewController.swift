@@ -78,18 +78,10 @@ class PayTableTableViewController: UITVCEnhanced {
     {
         savePaymentInfo()
         
-        let confirmationNotification = MBProgressHUD.showHUDAddedTo(self.view, animated: true)
-        confirmationNotification.mode = MBProgressHUDMode.CustomView
-        confirmationNotification.userInteractionEnabled = false
-        confirmationNotification.labelText = "Completed"
-        confirmationNotification.customView =  UIImageView(image: UIImage(named: "checkmark-37x37-white"))
-        confirmationNotification.animationType = MBProgressHUDAnimation.Zoom
-        confirmationNotification.hide(true, afterDelay: 0.8)
-        
         //finally switch to history tab
         //self.tabBarController?.selectedIndex = 2
         
-        /* To use a pre-defined segue programatically*/
+        /* To use a pre-defined segue programatically */
         //performSegueWithIdentifier("PaymentMade", sender: self)
     }
     
@@ -113,7 +105,18 @@ class PayTableTableViewController: UITVCEnhanced {
             println("Could not save \(error), \(error?.userInfo)")
         } else {
             println("saved data")
+            showPaymentConfirmation()
         }
+    }
+    
+    func showPaymentConfirmation(){
+        let confirmationNotification = MBProgressHUD.showHUDAddedTo(self.view, animated: true)
+        confirmationNotification.mode = MBProgressHUDMode.CustomView
+        confirmationNotification.userInteractionEnabled = false
+        confirmationNotification.labelText = "Completed"
+        confirmationNotification.customView =  UIImageView(image: UIImage(named: "checkmark-37x37-white"))
+        confirmationNotification.animationType = MBProgressHUDAnimation.Zoom
+        confirmationNotification.hide(true, afterDelay: 0.8)
     }
     
     

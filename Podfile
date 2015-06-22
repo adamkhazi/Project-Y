@@ -3,6 +3,7 @@
 
 target 'Project Y' do
   pod 'MBProgressHUD', '~> 0.9.1'
+  pod 'Canvas'
 end
 
 target 'Project YTests' do

@@ -1,0 +1,13 @@
+PODS:
+  - Canvas (0.1.2)
+  - MBProgressHUD (0.9.1)
+
+DEPENDENCIES:
+  - Canvas
+  - MBProgressHUD (~> 0.9.1)
+
+SPEC CHECKSUMS:
+  Canvas: eb861e3b555d032648146c8ffda1a5dea40059ca
+  MBProgressHUD: c47f2c166c126cf2ce36498d80f33e754d4e93ad
+
+COCOAPODS: 0.37.2

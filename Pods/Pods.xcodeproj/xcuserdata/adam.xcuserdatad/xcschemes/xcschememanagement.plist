@@ -4,6 +4,11 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
+		<key>Pods-Project Y-Canvas.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>Pods-Project Y-MBProgressHUD.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -17,12 +22,17 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>1D2440E13CF4675CAF30A87F</key>
+		<key>0E2E96EC1C2354A325E24A5C</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>FC917E60B8ED0699101433D3</key>
+		<key>10A51507B20E605C16D6F94E</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>88380116C3590B1D662D8FDF</key>
 		<dict>
 			<key>primary</key>
 			<true/>
