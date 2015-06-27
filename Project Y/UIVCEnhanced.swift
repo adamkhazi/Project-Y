@@ -1,15 +1,14 @@
 //
-//  UITVCEnhanced.swift
+//  UIVCEnhanced.swift
 //  Project Y
 //
-//  Created by Adam Khazi on 09/06/2015.
+//  Created by Adam Khazi on 27/06/2015.
 //  Copyright (c) 2015 Adam Khazi. All rights reserved.
 //
 
 import Foundation
-import UIKit
 
-class UITVCEnhanced: UITableViewController {
+class UIVCEnhanced: UIViewController {
     
     // MARK: Literal Conversions
     

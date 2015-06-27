@@ -9,7 +9,13 @@
 import UIKit
 import CoreData
 
-class HistoryViewController: UITVCEnhanced {
+class HistoryViewController: UIVCEnhanced, UITableViewDataSource, UITableViewDelegate {
+    
+    // History table view reference
+    @IBOutlet weak var tableView: UITableView!
+    
+    // cell reuse identifier
+    let cellIdentifier = "HistoryCell"
     
     //Segmented Controller State - default set
     var sControllerState = Entity.PaymentAndReceived
@@ -25,6 +31,22 @@ class HistoryViewController: UITVCEnhanced {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        
+        /* table view setup start */
+        tableView.delegate = self
+        tableView.dataSource = self
+        
+        /* table view setup end */
+        
+        // so navigation bar can match the opaque-ness of the extension
+        self.navigationController!.navigationBar.translucent = false
+        
+        // remove shadow
+        self.navigationController!.navigationBar.shadowImage = UIImage(named: "TransparentPixel")
+        
+        self.navigationController!.navigationBar.setBackgroundImage(UIImage(named: "Pixel"), forBarMetrics: UIBarMetrics.Default)
+        
+        log("Loaded HistoryViewController")
     }
     
     //Called when the view is about to be made visible
@@ -46,12 +68,13 @@ class HistoryViewController: UITVCEnhanced {
         // Dispose of any resources that can be recreated.
     }
 
+    // MARK: Segmented Control primary listener methods
+    
     /* Segmented Control Target-Action method used to send
     control events from Controller to this method */
     @IBAction func valueChanged(sender: AnyObject) {
-        
         /* Debug */
-        println("Segment control value changed: " +
+        log("Segment control value changed: " +
             "\(sControllerState.rawValue)")
         
         // update state since value has just changed
@@ -64,8 +87,8 @@ class HistoryViewController: UITVCEnhanced {
         tableView.reloadData()
     }
     
-    /* update global variable sControllerState accoroding to 
-    Segment Control */
+    /* update global variable sControllerState according to
+    Segment Control index */
     func updateSControllerState(){
         
         switch segmentControl.selectedSegmentIndex {
@@ -83,11 +106,17 @@ class HistoryViewController: UITVCEnhanced {
             sControllerState = Entity.PaymentAndReceived
 
         }
+        log("Updated controller state")
     }
     
-    /* TableView Data model protocol methods */
+    // MARK: UITableViewDataSource methods
+    /* TableView Data model protocol methods Start */
     
-    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+        return 1
+    }
+    
+    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
         switch sControllerState {
             
@@ -105,10 +134,10 @@ class HistoryViewController: UITVCEnhanced {
         }
     }
     
-    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         
         let cell =
-        tableView.dequeueReusableCellWithIdentifier("HistoryCell", forIndexPath: indexPath)
+        tableView.dequeueReusableCellWithIdentifier(cellIdentifier, forIndexPath: indexPath)
             as! UITableViewCell
         
         // references to table row labels
@@ -151,11 +180,12 @@ class HistoryViewController: UITVCEnhanced {
                 amountLabel?.text = d2S((receivedRow.valueForKey("amount") as? Double)!)
             
         }
-        
         return cell
     }
     
     /* TableView Data model protocol methods End */
+    
+    // MARK: Segmented Controller switch based UITableView data loading
     
     /* fetch data from core data and update appropriate data array for table view */
     func loadTableData(){
@@ -175,7 +205,7 @@ class HistoryViewController: UITVCEnhanced {
         //updata data for tableview, otherwise print error
         if fetchedResults.isEmpty
         {
-            println("loadTableData(): No data fetched")
+            log("loadTableData(): No data fetched")
                 
         } else {
             updateDataBasedOnState(fetchedResults)
@@ -204,7 +234,7 @@ class HistoryViewController: UITVCEnhanced {
              fetchRequestTwo = NSFetchRequest(entityName: Entity.Received.rawValue)
              
              //debug
-             println("createFetchRequestBasedOnState(): Entity.Payment ")
+             log("createFetchRequestBasedOnState(): Entity.Payment")
             return (fetchRequestOne, fetchRequestTwo)
             
         case Entity.Received:
@@ -279,7 +309,3 @@ enum Entity: String {
     case Received = "Received"
     case PaymentAndReceived = "PaymentAndReceived"
 }
-
-
-
-

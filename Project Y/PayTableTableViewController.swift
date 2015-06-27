@@ -74,9 +74,15 @@ class PayTableTableViewController: UITVCEnhanced {
     }
     
     /* action that takes place when the confirm button is tapped */
-    @IBAction func makePayment(sender: AnyObject)
-    {
-        savePaymentInfo()
+    @IBAction func makePayment(sender: AnyObject) {
+        if verifyInput() {
+            savePaymentInfo()
+        } else {
+            // show error
+            
+        }
+        
+        
         
         //finally switch to history tab
         //self.tabBarController?.selectedIndex = 2
@@ -119,7 +125,44 @@ class PayTableTableViewController: UITVCEnhanced {
         confirmationNotification.hide(true, afterDelay: 0.8)
     }
     
-    
+    /* checks if amount passed in is valid*/
+    func verifyInput() -> Bool
+    {
+        var validAmount: Bool = false
+        var validAccount: Bool = false
+        var validPayee: Bool = false
+        
+        if (stringIsValidDouble(payAmount.text) && payAmount.text != ""){
+            // do something 
+            validAmount = true
+        } else {
+            // show error
+            shakeField(payAmount)
+            log("Amount not entered")
+        }
+        
+        if selectedBankAccount != nil{
+            // do something
+            validAccount = true
+        } else {
+            // show error
+            log("Account not selected")
+        }
+        
+        if selectedPayee != nil{
+            // do something
+            validPayee = true
+        } else {
+            // show error
+            log("Payee not selected")
+        }
+        
+        if validAccount && validPayee && validAmount {
+            return true
+        }
+        
+        return false
+    }
     
 
 }

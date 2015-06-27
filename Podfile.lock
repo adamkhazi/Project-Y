@@ -1,13 +1,16 @@
 PODS:
   - Canvas (0.1.2)
   - MBProgressHUD (0.9.1)
+  - UITextField+Shake (1.0)
 
 DEPENDENCIES:
   - Canvas
   - MBProgressHUD (~> 0.9.1)
+  - UITextField+Shake
 
 SPEC CHECKSUMS:
   Canvas: eb861e3b555d032648146c8ffda1a5dea40059ca
   MBProgressHUD: c47f2c166c126cf2ce36498d80f33e754d4e93ad
+  UITextField+Shake: 61fe6ff0cdbf667618d1e856022940aa7798c3f0
 
 COCOAPODS: 0.37.2
