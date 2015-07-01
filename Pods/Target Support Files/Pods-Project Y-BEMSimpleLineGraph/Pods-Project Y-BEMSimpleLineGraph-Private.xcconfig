@@ -1,6 +1,6 @@
 #include "Pods-Project Y-BEMSimpleLineGraph.xcconfig"
 GCC_PREPROCESSOR_DEFINITIONS = $(inherited) COCOAPODS=1
-HEADER_SEARCH_PATHS = "${PODS_ROOT}/Headers/Private" "${PODS_ROOT}/Headers/Private/BEMSimpleLineGraph" "${PODS_ROOT}/Headers/Public" "${PODS_ROOT}/Headers/Public/BEMSimpleLineGraph" "${PODS_ROOT}/Headers/Public/Canvas" "${PODS_ROOT}/Headers/Public/MBProgressHUD" "${PODS_ROOT}/Headers/Public/UITextField+Shake"
+HEADER_SEARCH_PATHS = "${PODS_ROOT}/Headers/Private" "${PODS_ROOT}/Headers/Private/BEMSimpleLineGraph" "${PODS_ROOT}/Headers/Public" "${PODS_ROOT}/Headers/Public/BEMSimpleLineGraph" "${PODS_ROOT}/Headers/Public/Canvas" "${PODS_ROOT}/Headers/Public/MBProgressHUD"
 OTHER_LDFLAGS = -ObjC
 PODS_ROOT = ${SRCROOT}
 SKIP_INSTALL = YES

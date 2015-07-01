@@ -19,11 +19,6 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
-		<key>Pods-Project Y-UITextField+Shake.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
-		</dict>
 		<key>Pods-Project Y.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -32,27 +27,22 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>473F0B9CE472419DD344D4E0</key>
+		<key>DBBC3BE9D96F0B34C2A728EF</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>651C98A8B45973A0F703BCBF</key>
+		<key>E141B4333B975712BB49E541</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>8A5A01B54125572EB1BFFA6F</key>
+		<key>E9AE0A6341C72B2E7F9524E2</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>8BC7D025ED2490570100F928</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>C2C0A877E702C3E4BB022901</key>
+		<key>EEDCE9BB870CE5D46E9C13E9</key>
 		<dict>
 			<key>primary</key>
 			<true/>

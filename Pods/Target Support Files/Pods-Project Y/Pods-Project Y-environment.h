@@ -24,9 +24,3 @@
 #define COCOAPODS_VERSION_MINOR_MBProgressHUD 9
 #define COCOAPODS_VERSION_PATCH_MBProgressHUD 1
 
-// UITextField+Shake
-#define COCOAPODS_POD_AVAILABLE_UITextField_Shake
-#define COCOAPODS_VERSION_MAJOR_UITextField_Shake 1
-#define COCOAPODS_VERSION_MINOR_UITextField_Shake 0
-#define COCOAPODS_VERSION_PATCH_UITextField_Shake 0
-

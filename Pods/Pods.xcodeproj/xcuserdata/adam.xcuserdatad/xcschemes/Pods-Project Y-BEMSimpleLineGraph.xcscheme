@@ -14,9 +14,9 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "8A5A01B54125572EB1BFFA6F"
-               BuildableName = "libPods-Project Y-UITextField+Shake.a"
-               BlueprintName = "Pods-Project Y-UITextField+Shake"
+               BlueprintIdentifier = "DBBC3BE9D96F0B34C2A728EF"
+               BuildableName = "libPods-Project Y-BEMSimpleLineGraph.a"
+               BlueprintName = "Pods-Project Y-BEMSimpleLineGraph"
                ReferencedContainer = "container:Pods.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
