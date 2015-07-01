@@ -733,8 +733,8 @@
                             </tableViewSection>
                         </sections>
                         <connections>
-                            <outlet property="dataSource" destination="LRU-C4-V8C" id="46J-5W-Cgg"/>
-                            <outlet property="delegate" destination="LRU-C4-V8C" id="Obk-k4-OhK"/>
+                            <outlet property="dataSource" destination="LRU-C4-V8C" id="HNt-QI-5JM"/>
+                            <outlet property="delegate" destination="LRU-C4-V8C" id="qQZ-Gz-1hH"/>
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Payment" id="P0a-Nt-g0O"/>
