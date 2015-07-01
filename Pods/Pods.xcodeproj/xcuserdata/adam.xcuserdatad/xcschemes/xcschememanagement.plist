@@ -4,6 +4,11 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
+		<key>Pods-Project Y-BEMSimpleLineGraph.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>Pods-Project Y-Canvas.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -27,22 +32,27 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>4F2AF8DCC907389D2C9872B8</key>
+		<key>473F0B9CE472419DD344D4E0</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>9A8480A7094F01C4562D1022</key>
+		<key>651C98A8B45973A0F703BCBF</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>9CBAB12E25AF87AA63D093E7</key>
+		<key>8A5A01B54125572EB1BFFA6F</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>BBD74DCCBDE2EF943CE0A164</key>
+		<key>8BC7D025ED2490570100F928</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>C2C0A877E702C3E4BB022901</key>
 		<dict>
 			<key>primary</key>
 			<true/>

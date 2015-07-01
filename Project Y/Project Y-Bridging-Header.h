@@ -5,3 +5,4 @@
 #import "Canvas.h"
 #import "CSAnimationView.h"
 #import "UITextField+Shake.h"
+#import "BEMSimpleLineGraphView.h"

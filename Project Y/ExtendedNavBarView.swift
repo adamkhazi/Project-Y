@@ -22,5 +22,6 @@ class ExtendedNavBarView: UIView {
         self.layer.shadowColor = UIColor.blackColor().CGColor
         self.layer.shadowOpacity = Float(0.25)
         
+        self.backgroundColor = UIColor(white: 1, alpha: 0.95)
     }
 }

@@ -5,6 +5,7 @@ target 'Project Y' do
   pod 'MBProgressHUD', '~> 0.9.1'
   pod 'Canvas'
   pod 'UITextField+Shake'
+  pod 'BEMSimpleLineGraph'
 end
 
 target 'Project YTests' do

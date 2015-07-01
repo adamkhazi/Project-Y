@@ -11,6 +11,9 @@ import CoreData
 
 class HistoryViewController: UIVCEnhanced, UITableViewDataSource, UITableViewDelegate {
     
+    // no items in list indicator
+    @IBOutlet weak var noItemsLabel: UILabel!
+    
     // History table view reference
     @IBOutlet weak var tableView: UITableView!
     
@@ -39,7 +42,7 @@ class HistoryViewController: UIVCEnhanced, UITableViewDataSource, UITableViewDel
         /* table view setup end */
         
         // so navigation bar can match the opaque-ness of the extension
-        self.navigationController!.navigationBar.translucent = false
+        self.navigationController!.navigationBar.translucent = true
         
         // remove shadow
         self.navigationController!.navigationBar.shadowImage = UIImage(named: "TransparentPixel")
@@ -180,6 +183,8 @@ class HistoryViewController: UIVCEnhanced, UITableViewDataSource, UITableViewDel
                 amountLabel?.text = d2S((receivedRow.valueForKey("amount") as? Double)!)
             
         }
+        cell.backgroundColor = UIColor.clearColor()
+
         return cell
     }
     
@@ -206,8 +211,9 @@ class HistoryViewController: UIVCEnhanced, UITableViewDataSource, UITableViewDel
         if fetchedResults.isEmpty
         {
             log("loadTableData(): No data fetched")
-                
+            noItemsLabel.hidden = false
         } else {
+            noItemsLabel.hidden = true
             updateDataBasedOnState(fetchedResults)
         }
 
